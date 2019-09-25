@@ -1,0 +1,144 @@
+Makefile:	mpas_ocn_init_ssh_and_landIcePressure.o
+Makefile:mpas_ocn_init_ssh_and_landIcePressure.o: mpas_ocn_init_interpolation.o mpas_ocn_init_vertical_grids.o
+mpas_ocn_init_global_ocean.F:   use ocn_init_ssh_and_landIcePressure
+mpas_ocn_init_global_ocean.F:      call mpas_log_write( 'Initializing vertical coordinate with ssh = 0.')
+mpas_ocn_init_global_ocean.F:      call ocn_init_ssh_and_landIcePressure_vertical_grid(domain, iErr)
+mpas_ocn_init_global_ocean.F:        call mpas_log_write( 'ocn_init_ssh_and_landIcePressure_vertical_grid failed.', MPAS_LOG_CRIT)
+mpas_ocn_init_global_ocean.F:         call ocn_init_ssh_and_landIcePressure_balance(domain, iErr)
+mpas_ocn_init_global_ocean.F:            call mpas_log_write( 'ocn_init_ssh_and_landIcePressure_balance failed.', MPAS_LOG_CRIT)
+mpas_ocn_init_global_ocean.F:      ! this occurs after ocn_init_ssh_and_landIcePressure_balance because activeTracers may have been remapped
+mpas_ocn_init_global_ocean.F:       real (kind=RKIND), dimension(:), pointer :: landIcePressure, landIceFraction, ssh, &
+mpas_ocn_init_global_ocean.F:          call mpas_pool_get_array(statePool, 'ssh', ssh, 1)
+mpas_ocn_init_global_ocean.F:          ssh(:) = 0.0_RKIND
+mpas_ocn_init_global_ocean.F:             if(config_iterative_init_variable == 'ssh') then
+mpas_ocn_init_global_ocean.F:                ssh(iCell) = min(0.0_RKIND,landIceDraftObserved(iCell))
+mpas_ocn_init_global_ocean.F:                if(ssh(iCell) < 0.0_RKIND) then
+Binary file mpas_ocn_init_global_ocean.o matches
+mpas_ocn_init_isomip.F:   use ocn_init_ssh_and_landIcePressure
+mpas_ocn_init_isomip.F:                                                  ssh
+mpas_ocn_init_isomip.F:        call mpas_pool_get_array(statePool, 'ssh', ssh, 1)
+mpas_ocn_init_isomip.F:              ssh(iCell) = (zFit(iFit+1) - zFit(iFit))*(y - yFit(iFit)) &
+mpas_ocn_init_isomip.F:          if(ssh(iCell) < 0.0_RKIND) then
+mpas_ocn_init_isomip.F:      !  based on ssh, bottomDepth and refBottomDepth
+mpas_ocn_init_isomip.F:      call ocn_init_ssh_and_landIcePressure_vertical_grid(domain, iErr)
+mpas_ocn_init_isomip.F:        call mpas_log_write( 'ocn_init_ssh_and_landIcePressure_vertical_grid failed.', MPAS_LOG_CRIT)
+mpas_ocn_init_isomip.F:      call ocn_init_ssh_and_landIcePressure_balance(domain, iErr)
+mpas_ocn_init_isomip.F:         call mpas_log_write( 'ocn_init_ssh_and_landIcePressure_balance failed.', MPAS_LOG_CRIT)
+Binary file mpas_ocn_init_isomip.o matches
+mpas_ocn_init_isomip_plus.F:   use ocn_init_ssh_and_landIcePressure
+mpas_ocn_init_isomip_plus.F:      call ocn_init_ssh_and_landIcePressure_vertical_grid(domain, iErr)
+mpas_ocn_init_isomip_plus.F:        call mpas_log_write( 'ocn_init_ssh_and_landIcePressure_vertical_grid failed.', MPAS_LOG_CRIT)
+mpas_ocn_init_isomip_plus.F:      call ocn_init_ssh_and_landIcePressure_balance(domain, iErr)
+mpas_ocn_init_isomip_plus.F:        call mpas_log_write( 'ocn_init_ssh_and_landIcePressure_balance failed.', MPAS_LOG_CRIT)
+mpas_ocn_init_isomip_plus.F:                                                   ssh, landIceFraction, oceanFracObserved, &
+mpas_ocn_init_isomip_plus.F:          call mpas_pool_get_array(statePool, 'ssh', ssh, 1)
+mpas_ocn_init_isomip_plus.F:                                                     xCell, yCell, ssh, nCells)
+mpas_ocn_init_isomip_plus.F:              ssh(iCell) = ssh(iCell)/oceanFracObserved(iCell)
+mpas_ocn_init_isomip_plus.F:              bottomDepth(iCell) = max(bottomDepthObserved(iCell),-ssh(iCell)+config_isomip_plus_min_column_thickness)
+mpas_ocn_init_isomip_plus.F:                ! this time we may need to raise the ssh if the column is too thin because we can't go any deeper
+mpas_ocn_init_isomip_plus.F:                ssh(iCell) = max(ssh(iCell), -bottomDepth(iCell)+config_isomip_plus_min_column_thickness)
+mpas_ocn_init_isomip_plus.F:              ssh(iCell) = 0.0_RKIND
+Binary file mpas_ocn_init_isomip_plus.o matches
+mpas_ocn_init_ssh_and_landIcePressure.F:!  ocn_init_ssh_and_landIcePressure
+mpas_ocn_init_ssh_and_landIcePressure.F:module ocn_init_ssh_and_landIcePressure
+mpas_ocn_init_ssh_and_landIcePressure.F:   public :: ocn_init_ssh_and_landIcePressure_vertical_grid, &
+mpas_ocn_init_ssh_and_landIcePressure.F:             ocn_init_ssh_and_landIcePressure_balance
+mpas_ocn_init_ssh_and_landIcePressure.F:!  routine ocn_init_ssh_and_landIcePressure_vertical_grid
+mpas_ocn_init_ssh_and_landIcePressure.F:!>  case must compute ssh before calling this routine.
+mpas_ocn_init_ssh_and_landIcePressure.F:!>  modifySSHMask should be set to 1 wherever the ssh or landIcePressure
+mpas_ocn_init_ssh_and_landIcePressure.F:   subroutine ocn_init_ssh_and_landIcePressure_vertical_grid(domain, iErr)!{{{
+mpas_ocn_init_ssh_and_landIcePressure.F:   end subroutine ocn_init_ssh_and_landIcePressure_vertical_grid
+mpas_ocn_init_ssh_and_landIcePressure.F:!  routine ocn_init_ssh_and_landIcePressure_balance
+mpas_ocn_init_ssh_and_landIcePressure.F:!>  This routine either updates SSH based on land-ice pressure (if config_iterative_init_variable = 'ssh')
+mpas_ocn_init_ssh_and_landIcePressure.F:!>  ('landIcePressure_from_top_density') or of all layers above the SSH ('ssh' or 'landIcePressure')
+mpas_ocn_init_ssh_and_landIcePressure.F:!>  ocn_init_ssh_and_landIcePressure_vertical_grid should be called to produce
+mpas_ocn_init_ssh_and_landIcePressure.F:   subroutine ocn_init_ssh_and_landIcePressure_balance(domain, iErr)!{{{
+mpas_ocn_init_ssh_and_landIcePressure.F:     real (kind=RKIND), dimension(:), pointer :: ssh
+mpas_ocn_init_ssh_and_landIcePressure.F:     ! In this case, we already computed the correct vertical grid with the ssh, so all we have to do is
+mpas_ocn_init_ssh_and_landIcePressure.F:         call mpas_pool_get_array(statePool, 'ssh', ssh, 1)
+mpas_ocn_init_ssh_and_landIcePressure.F:             ssh(iCell) = 0.0_RKIND
+mpas_ocn_init_ssh_and_landIcePressure.F:           landIcePressure(iCell) = max(0.0_RKIND, -density(1,iCell)*gravity*ssh(iCell))
+mpas_ocn_init_ssh_and_landIcePressure.F:         landIceDraft(:) = ssh(:)
+mpas_ocn_init_ssh_and_landIcePressure.F:     ! once the ssh or landIcePressure is determined
+mpas_ocn_init_ssh_and_landIcePressure.F:       call mpas_pool_get_array(statePool, 'ssh', ssh, 1)
+mpas_ocn_init_ssh_and_landIcePressure.F:           ssh(iCell) = 0.0_RKIND
+mpas_ocn_init_ssh_and_landIcePressure.F:         if(config_iterative_init_variable == 'ssh') then
+mpas_ocn_init_ssh_and_landIcePressure.F:           ! compute ssh where pressure equals landIcePressure
+mpas_ocn_init_ssh_and_landIcePressure.F:           ssh(iCell) = find_z_given_pressure(landIcePressure(iCell), density(:,iCell), &
+mpas_ocn_init_ssh_and_landIcePressure.F:           landIcePressure(iCell) = max(0.0_RKIND, find_pressure_given_z(ssh(iCell), density(:,iCell), &
+mpas_ocn_init_ssh_and_landIcePressure.F:           effectiveDensityInLandIce(iCell) = -landIcePressure(iCell)/(gravity*ssh(iCell))
+mpas_ocn_init_ssh_and_landIcePressure.F:       landIceDraft(:) = ssh(:)
+mpas_ocn_init_ssh_and_landIcePressure.F:     ! update the vertical grid based on the new ssh
+mpas_ocn_init_ssh_and_landIcePressure.F:   end subroutine ocn_init_ssh_and_landIcePressure_balance
+mpas_ocn_init_ssh_and_landIcePressure.F:!>  case must compute ssh before calling this routine.  This
+mpas_ocn_init_ssh_and_landIcePressure.F:     real (kind=RKIND), dimension(:), pointer :: refBottomDepth, bottomDepth, ssh
+mpas_ocn_init_ssh_and_landIcePressure.F:     if(config_iterative_init_variable .ne. 'ssh' &
+mpas_ocn_init_ssh_and_landIcePressure.F:     ! the vertical grid displaced by the ssh
+mpas_ocn_init_ssh_and_landIcePressure.F:       ! We already know the ssh and landIcePressure we want to use.
+mpas_ocn_init_ssh_and_landIcePressure.F:       ! Compute the layer thicknesses and zMid based on topography and ssh.
+mpas_ocn_init_ssh_and_landIcePressure.F:         call mpas_pool_get_array(statePool, 'ssh', ssh, 1)
+mpas_ocn_init_ssh_and_landIcePressure.F:             ! we already know the ssh and landIcePressure we want to use.
+mpas_ocn_init_ssh_and_landIcePressure.F:             ! compute the layer thicknesses and zMid based on topography and ssh
+mpas_ocn_init_ssh_and_landIcePressure.F:                  ssh=ssh(iCell))
+mpas_ocn_init_ssh_and_landIcePressure.F:             ! We don't know the ssh or landIcePressure yet, and we need tracers on a reference grid to figure it out.
+mpas_ocn_init_ssh_and_landIcePressure.F:             ! compute restingThickness and reference layerThickness and zMid based on topography with ssh=0
+mpas_ocn_init_ssh_and_landIcePressure.F:             ! (omitting ssh argument)
+mpas_ocn_init_ssh_and_landIcePressure.F:end module ocn_init_ssh_and_landIcePressure
+Binary file mpas_ocn_init_ssh_and_landIcePressure.o matches
+mpas_ocn_init_sub_ice_shelf_2D.F:   use ocn_init_ssh_and_landIcePressure
+mpas_ocn_init_sub_ice_shelf_2D.F:     real(kind=RKIND), dimension(:), pointer :: landIceFraction, ssh
+mpas_ocn_init_sub_ice_shelf_2D.F:        call mpas_pool_get_array(statePool, 'ssh', ssh, 1)
+mpas_ocn_init_sub_ice_shelf_2D.F:           ssh(iCell) = -config_sub_ice_shelf_2D_bottom_depth + totalSubIceThickness
+mpas_ocn_init_sub_ice_shelf_2D.F:           if(ssh(iCell) < 0.0_RKIND) then
+mpas_ocn_init_sub_ice_shelf_2D.F:     ! compute the vertical grid (layerThickness, restingThickness, maxLevelCell, zMid) based on ssh,
+mpas_ocn_init_sub_ice_shelf_2D.F:     call ocn_init_ssh_and_landIcePressure_vertical_grid(domain, iErr)
+mpas_ocn_init_sub_ice_shelf_2D.F:        call mpas_log_write( 'ocn_init_ssh_and_landIcePressure_vertical_grid failed.', MPAS_LOG_CRIT)
+mpas_ocn_init_sub_ice_shelf_2D.F:        ! If we are constructing an initial guess (rather than reading ssh in from a stream), these are reference activeTracers
+mpas_ocn_init_sub_ice_shelf_2D.F:        ! on a vertical grid that has not been displaced by the ssh
+mpas_ocn_init_sub_ice_shelf_2D.F:     call ocn_init_ssh_and_landIcePressure_balance(domain, iErr)
+mpas_ocn_init_sub_ice_shelf_2D.F:        call mpas_log_write( 'ocn_init_ssh_and_landIcePressure_balance failed.', MPAS_LOG_CRIT)
+Binary file mpas_ocn_init_sub_ice_shelf_2D.o matches
+mpas_ocn_init_vertical_grids.F:                                                                maxLevelCell,nVertLevels,iErr,restingThickness,ssh)!{{{
+mpas_ocn_init_vertical_grids.F:      real (kind=RKIND), intent(in), optional :: ssh
+mpas_ocn_init_vertical_grids.F:      if(present(ssh) .and. .not. present(restingThickness)) then
+mpas_ocn_init_vertical_grids.F:         call mpas_log_write( ' Error: ssh present but restingThickness not present ' &
+mpas_ocn_init_vertical_grids.F:      ! first, compute the resting layer thickness (same as layer thickness if ssh not present)
+mpas_ocn_init_vertical_grids.F:         ! stretch layers if ssh is present
+mpas_ocn_init_vertical_grids.F:         if(present(ssh)) then
+mpas_ocn_init_vertical_grids.F:            layerStretch = (ssh + bottomDepth)/bottomDepth
+mpas_ocn_init_vertical_grids.F:            zTop = ssh
+mpas_ocn_init_vertical_grids.F:      real (kind=RKIND), dimension(:), pointer :: rx1MaxEdge, rx1MaxCell, ssh, rx1MaxLevel
+mpas_ocn_init_vertical_grids.F:        call mpas_pool_get_array(statePool, 'ssh', ssh, 1)
+mpas_ocn_init_vertical_grids.F:              dzVert1 = 2.0_RKIND*(ssh(c1)-zMid(k,c1))
+mpas_ocn_init_vertical_grids.F:              dzVert2 = 2.0_RKIND*(ssh(c2)-zMid(k,c2))
+mpas_ocn_init_vertical_grids.F:              dzEdgeK = ssh(c2)-ssh(c1)
+mpas_ocn_init_vertical_grids.F:!>  less than a maximum value (rx1 < rx1Max). ssh and bottomDepth should
+mpas_ocn_init_vertical_grids.F:      real (kind=RKIND), dimension(:), pointer :: ssh, bottomDepth, refBottomDepth, zTop, zBot, zBotNew, landIceFraction, &
+mpas_ocn_init_vertical_grids.F:        call mpas_pool_get_array(statePool, 'ssh', ssh, 1)
+mpas_ocn_init_vertical_grids.F:          !bottomDepth(iCell) = max(bottomDepth(iCell), -ssh(iCell) + config_rx1_min_layer_thickness*config_rx1_min_levels)
+mpas_ocn_init_vertical_grids.F:          verticalStretch(:,iCell) = (ssh(iCell) + bottomDepth(iCell))/bottomDepth(iCell)
+mpas_ocn_init_vertical_grids.F:          zInterface(1,iCell) = ssh(iCell)
+mpas_ocn_init_vertical_grids.F:            call mpas_pool_get_array(statePool, 'ssh', ssh, 1)
+mpas_ocn_init_vertical_grids.F:                  frac = (ssh(iCell)-zMean)/(ssh(iCell)-zInterface(k+1,iCell))
+mpas_ocn_init_vertical_grids.F:              stretch = (ssh(iCell) + bottomDepth(iCell))/bottomDepth(iCell)
+mpas_ocn_init_vertical_grids.F:          call mpas_pool_get_array(statePool, 'ssh', ssh, 1)
+mpas_ocn_init_vertical_grids.F:          zTop(:) = ssh(:)
+mpas_ocn_init_vertical_grids.F:          call mpas_pool_get_array(statePool, 'ssh', ssh, 1)
+mpas_ocn_init_vertical_grids.F:            ! at the top level, use ssh instead of zMid
+mpas_ocn_init_vertical_grids.F:            dzVertMean = 0.5_RKIND*(ssh(c1)-zMid(1,c1)+ssh(c2)-zMid(1,c2))
+mpas_ocn_init_vertical_grids.F:            dzEdgeMean = 0.5_RKIND*abs(ssh(c2)-ssh(c1)+zMid(1,c2)-zMid(1,c1))
+mpas_ocn_init_vertical_grids.F:            ! a factor of 0.5 because ssh is at top interface, not middle of the previous layer
+mpas_ocn_init_vertical_grids.F:        call mpas_pool_get_array(statePool, 'ssh', ssh, 1)
+mpas_ocn_init_vertical_grids.F:          stretch = (ssh(iCell) + bottomDepth(iCell))/bottomDepth(iCell)
+Binary file mpas_ocn_init_vertical_grids.o matches
+ocn_init_ssh_and_landicepressure.mod:V29 :0x14 ocn_init_ssh_and_landicepressure
+ocn_init_ssh_and_landicepressure.mod:39 mpas_ocn_init_ssh_and_landIcePressure.F S624 0
+ocn_init_ssh_and_landicepressure.mod:S 624 24 0 0 0 9 1 0 5011 10015 0 A 0 0 0 0 B 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 22 0 0 0 0 0 0 ocn_init_ssh_and_landicepressure
+ocn_init_ssh_and_landicepressure.mod:S 24447 27 0 0 0 9 24451 624 98095 0 0 A 0 0 0 0 B 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 624 0 0 0 0 ocn_init_ssh_and_landicepressure_vertical_grid
+ocn_init_ssh_and_landicepressure.mod:S 24448 27 0 0 0 9 24455 624 98142 0 0 A 0 0 0 0 B 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 624 0 0 0 0 ocn_init_ssh_and_landicepressure_balance
+ocn_init_ssh_and_landicepressure.mod:S 24451 23 5 0 0 0 24454 624 98095 0 0 A 0 0 0 0 B 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 ocn_init_ssh_and_landicepressure_vertical_grid
+ocn_init_ssh_and_landicepressure.mod:S 24454 14 5 0 0 0 1 24451 98095 0 400000 A 0 0 0 0 B 0 0 0 0 0 0 0 5334 2 0 0 0 0 0 0 0 0 0 0 0 0 91 0 624 0 0 0 0 ocn_init_ssh_and_landicepressure_vertical_grid
+ocn_init_ssh_and_landicepressure.mod:S 24455 23 5 0 0 0 24458 624 98142 0 0 A 0 0 0 0 B 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 ocn_init_ssh_and_landicepressure_balance
+ocn_init_ssh_and_landicepressure.mod:S 24458 14 5 0 0 0 1 24455 98142 0 400000 A 0 0 0 0 B 0 0 0 0 0 0 0 5337 2 0 0 0 0 0 0 0 0 0 0 0 0 130 0 624 0 0 0 0 ocn_init_ssh_and_landicepressure_balance
+ocn_init_ssh_and_landicepressure.mod:S 24461 1 3 1 0 16 1 24459 98206 14 3000 A 0 0 0 0 B 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 updatewithssh
+ocn_init_vertical_grids.mod:S 25108 1 3 1 0 9 1 25099 102875 80000014 3000 A 0 0 0 0 B 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 ssh

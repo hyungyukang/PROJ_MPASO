@@ -1,0 +1,5 @@
+Binary file libdycore.a matches
+test_backup/mode_forward_back2/mpas_ocn_time_integration_si.F:              print*,'after xstate', xstate(1:4)
+Binary file test_backup/mode_forward_back2/mpas_ocn_time_integration_si.o matches
+test_backup/mode_forward_back/mpas_ocn_time_integration_si.F:              print*,'after xstate', xstate(1:4)
+Binary file test_backup/mode_forward_back/mpas_ocn_time_integration_si.o matches

@@ -36,6 +36,7 @@ module ocn_forward_mode
 
    use ocn_time_integration
    use ocn_time_integration_si
+   use ocn_time_integration_sfwd
    use ocn_time_integration_split
    use ocn_tendency
    use ocn_diagnostics
@@ -130,9 +131,6 @@ module ocn_forward_mode
 
       real (kind=RKIND), pointer :: config_maxMeshDensity
       logical, pointer :: config_use_surface_salinity_monthly_restoring
-       
-      character (len=StrKIND), pointer :: config_time_integrator
-
       ierr = 0
 
       !
@@ -274,14 +272,10 @@ module ocn_forward_mode
 
       call ocn_init_routines_compute_max_level(domain)
 
+      call ocn_time_integration_si_init(domain)
 
-      call mpas_pool_get_config(ocnConfigs, 'config_time_integrator', config_time_integrator)
-      
-      if (trim(config_time_integrator) == 'semi_implicit' ) then
-        call ocn_time_integration_si_init(domain)
-      else
-        call ocn_time_integration_split_init(domain)
-      endif
+!     call ocn_time_integration_sfwd_init(domain)
+!     call ocn_time_integration_split_init(domain)
 
       call mpas_log_write(' Vertical coordinate movement is: ' // trim(config_vert_coord_movement))
 
@@ -383,22 +377,6 @@ module ocn_forward_mode
       call mpas_reset_clock_alarm(domain % clock, 'salinityDataReadAlarm', ierr=err_tmp)
 
       endif
-
-
-     
-      ! Preconditioner for the semi-implicit barotropic mode solver
-      if (config_time_integrator == 'semi_implicit' ) then
-
-         call mpas_log_write(' Building a preconditioning matrix: ')
-         call mpas_timer_start("preconditioning matrix build")
-
-         ! Building a preconditioning matrix
-         call ocn_time_integrator_si_preconditioner(domain, dt)
-
-         call mpas_timer_stop("preconditioning matrix build")
-
-      endif
-
 
    end function ocn_forward_mode_init!}}}
 
@@ -507,6 +485,7 @@ module ocn_forward_mode
       logical, pointer :: config_use_ecosysTracers
       logical, pointer :: config_use_activeTracers_surface_restoring
       logical, pointer :: config_use_surface_salinity_monthly_restoring
+      logical, save :: precon = .true.
       
 
       ierr = 0
@@ -602,6 +581,15 @@ module ocn_forward_mode
 
            block_ptr => block_ptr % next
          end do
+
+!     if ( precon ) then
+!     !--- Preconditioner for SI --------------------------!
+!          precon = .false.
+!          print*, 'Preconditioner started ................' 
+!     call ocn_time_integrator_si_preconditioner(domain, dt)
+!          print*, 'Preconditioner completed ..............'
+!     !----------------------------------------------------!
+!     endif
 
          call mpas_timer_start("time integration")
 
@@ -729,6 +717,10 @@ module ocn_forward_mode
       call mpas_destroy_clock(domain % clock, ierr)
 
       call mpas_decomp_destroy_decomp_list(domain % decompositions)
+
+      !------------
+      call ocn_time_integration_fortrilinos_finalize()
+      !------------
 
    end function ocn_forward_mode_finalize!}}}
 

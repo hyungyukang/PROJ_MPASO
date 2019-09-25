@@ -1269,6 +1269,7 @@ module ocn_time_integration_split
                end do
                !$omp end do
 
+
                block => block % next
             end do  ! block
             call mpas_timer_stop('btr se norm')
@@ -1335,6 +1336,8 @@ module ocn_time_integration_split
                   useVelocityCorrection = 0
                endif
 
+!             print*, minval(barotropicThicknessFlux),maxval(barotropicThicknessFlux)
+
                !$omp do schedule(runtime) private(k, normalThicknessFluxSum, thicknessSum, normalVelocityCorrection)
                do iEdge = 1, nEdges
 
@@ -1355,6 +1358,8 @@ module ocn_time_integration_split
 
                   normalVelocityCorrection = useVelocityCorrection * (( barotropicThicknessFlux(iEdge) - normalThicknessFluxSum) &
                                            / thicknessSum)
+
+!             print*, normalThicknessFluxSum,thicknessSum,barotropicThicknessFlux(iEdge)
 
                   do k = 1, nVertLevels
 

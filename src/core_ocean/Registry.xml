@@ -233,7 +233,7 @@
 		/>
 		<nml_option name="config_time_integrator" type="character" default_value="split_explicit" units="unitless"
 					description="Time integration method."
-					possible_values="'split_explicit', 'RK4', 'unsplit_explicit','semi_implicit'"
+					possible_values="'split_explicit', 'RK4', 'unsplit_explicit','split_fwd'"
 		/>
 	</nml_record>
 	<nml_record name="ALE_vertical_grid" mode="forward">
@@ -991,24 +991,6 @@
 		<nml_option name="config_btr_solve_SSH2" type="logical" default_value=".false." units="unitless"
 					description="If true, execute the SSH corrector step in stage 2"
 					possible_values=".true. or .false."
-		/>
-	</nml_record>
-	<nml_record name="semi_implicit_ts" mode="forward">
-		<nml_option name="config_btr_si_preconditioner" type="character" default_value="block_jacobi" units="unitless"
-					description="Type of preconditioner for the barotropic mode solver"
-					possible_values="block_jacobi, jacobi, none"
-		/>
-		<nml_option name="config_btr_si_tolerance" type="real" default_value="1.0e-10" units="unitless"
-					description="Tolerance for the barotropic mode solver"
-					possible_values="any positive real, but typically less than 1.0e-9"
-		/>
-		<nml_option name="config_n_btr_si_outer_iter" type="integer" default_value="2" units="unitless"
-					description="number of outer iterations"
-					possible_values="any positive integer, but typically 2"
-		/>
-		<nml_option name="config_n_btr_si_u_iter" type="integer" default_value="5" units="unitless"
-					description="number of iterations of barotropic velocity"
-					possible_values="any positive integer, but typically 5"
 		/>
 	</nml_record>
 	<nml_record name="testing" mode="forward">
@@ -2194,50 +2176,110 @@
 			 description="normal velocity averaged over ocean surface layer (generally 0.1 of the ocean boundary layer)"
 			 packages="forwardMode;analysisMode"
 		/>
-		<!-- FIELD semi_implicit time stepping -->
+		<!-- FIELD split semi-implicit time stepping -->
 		<var name="barotropicCoriolisTerm" type="real" dimensions="nEdges Time" nits="m s^{-2}"
-			 description="f * uPerp for the semi-implicit time stepping"
+			 description="f * uPerp for the split-implicit time stepping"
 			 packages="forwardMode;analysisMode"
 		/>
 		<var name="CGvec_r0" type="real" dimensions="nCells Time" nits="unitless"
-			 description="A vector used in the semi-implicit barotropic mode CG solver"
+			 description="Vector for split semi-implicit time stepping"
 			 packages="forwardMode;analysisMode"
 		/>
 		<var name="CGvec_r1" type="real" dimensions="nCells Time" nits="unitless"
-			 description="A vector used in the semi-implicit barotropic mode CG solver"
+			 description="Vector for split semi-implicit time stepping"
+			 packages="forwardMode;analysisMode"
+		/>
+		<var name="CGvec_rh" type="real" dimensions="nCells Time" nits="unitless"
+			 description="Vector for split semi-implicit time stepping"
 			 packages="forwardMode;analysisMode"
 		/>
 		<var name="CGvec_p0" type="real" dimensions="nCells Time" nits="unitless"
-			 description="A vector used in the semi-implicit barotropic mode CG solver"
+			 description="Vector for split semi-implicit time stepping"
 			 packages="forwardMode;analysisMode"
 		/>
 		<var name="CGvec_p1" type="real" dimensions="nCells Time" nits="unitless"
-			 description="A vector used in the semi-implicit barotropic mode CG solver"
+			 description="Vector for split semi-implicit time stepping"
+			 packages="forwardMode;analysisMode"
+		/>
+		<var name="CGvec_h" type="real" dimensions="nCells Time" nits="unitless"
+			 description="Vector for split semi-implicit time stepping"
+			 packages="forwardMode;analysisMode"
+		/>
+		<var name="CGvec_s" type="real" dimensions="nCells Time" nits="unitless"
+			 description="Vector for split semi-implicit time stepping"
+			 packages="forwardMode;analysisMode"
+		/>
+		<var name="CGvec_v0" type="real" dimensions="nCells Time" nits="unitless"
+			 description="Vector for split semi-implicit time stepping"
+			 packages="forwardMode;analysisMode"
+		/>
+		<var name="CGvec_v1" type="real" dimensions="nCells Time" nits="unitless"
+			 description="Vector for split semi-implicit time stepping"
+			 packages="forwardMode;analysisMode"
+		/>
+		<var name="CGvec_t" type="real" dimensions="nCells Time" nits="unitless"
+			 description="Vector for split semi-implicit time stepping"
+			 packages="forwardMode;analysisMode"
+		/>
+		<var name="CGvec_z0" type="real" dimensions="nCells Time" nits="unitless"
+			 description="Vector for split semi-implicit time stepping"
+			 packages="forwardMode;analysisMode"
+		/>
+		<var name="CGvec_z1" type="real" dimensions="nCells Time" nits="unitless"
+			 description="Vector for split semi-implicit time stepping"
 			 packages="forwardMode;analysisMode"
 		/>
 		<var name="CGvec_u0" type="real" dimensions="nCells Time" nits="unitless"
-			 description="A vector used in the semi-implicit barotropic mode CG solver"
+			 description="Vector for split semi-implicit time stepping"
 			 packages="forwardMode;analysisMode"
 		/>
 		<var name="CGvec_u1" type="real" dimensions="nCells Time" nits="unitless"
-			 description="A vector used in the semi-implicit barotropic mode CG solver"
+			 description="Vector for split semi-implicit time stepping"
 			 packages="forwardMode;analysisMode"
 		/>
 		<var name="CGvec_s0" type="real" dimensions="nCells Time" nits="unitless"
-			 description="A vector used in the semi-implicit barotropic mode CG solver"
+			 description="Vector for split semi-implicit time stepping"
 			 packages="forwardMode;analysisMode"
 		/>
 		<var name="CGvec_s1" type="real" dimensions="nCells Time" nits="unitless"
-			 description="A vector used in the semi-implicit barotropic mode CG solver"
+			 description="Vector for split semi-implicit time stepping"
 			 packages="forwardMode;analysisMode"
 		/>
 		<var name="CGvec_w0" type="real" dimensions="nCells Time" nits="unitless"
-			 description="A vector used in the semi-implicit barotropic mode CG solver"
+			 description="Vector for split semi-implicit time stepping"
 			 packages="forwardMode;analysisMode"
 		/>
 		<var name="CGvec_w1" type="real" dimensions="nCells Time" nits="unitless"
-			 description="A vector used in the semi-implicit barotropic mode CG solver"
+			 description="Vector for split semi-implicit time stepping"
 			 packages="forwardMode;analysisMode"
+		/>
+		<var name="CGvec_m0" type="real" dimensions="nCells Time" nits="unitless"
+			 description="Vector for split semi-implicit time stepping"
+			 packages="forwardMode;analysisMode"
+		/>
+		<var name="CGvec_m1" type="real" dimensions="nCells Time" nits="unitless"
+			 description="Vector for split semi-implicit time stepping"
+			 packages="forwardMode;analysisMode"
+		/>
+		<var name="CGvec_n0" type="real" dimensions="nCells Time" nits="unitless"
+			 description="Vector for split semi-implicit time stepping"
+			 packages="forwardMode;analysisMode"
+		/>
+		<var name="CGvec_n1" type="real" dimensions="nCells Time" nits="unitless"
+			 description="Vector for split semi-implicit time stepping"
+			 packages="forwardMode;analysisMode"
+		/>
+		<var name="CGvec_q0" type="real" dimensions="nCells Time" nits="unitless"
+			 description="Vector for split semi-implicit time stepping"
+			 packages="forwardMode;analysisMode"
+		/>
+		<var name="CGvec_q1" type="real" dimensions="nCells Time" nits="unitless"
+			 description="Vector for split semi-implicit time stepping"
+			 packages="forwardMode;analysisMode"
+		/>
+		<var name="normalBarotropicVelocitySave" type="real" dimensions="nEdges Time" units="m s^{-1}"
+			 description="barotropic velocity, used in subcycling in stage 2 of split-explicit time-stepping"
+			 packages="splitTimeIntegrator"
 		/>
 		<var_array name="surfaceVelocity" type="real" dimensions="nCells Time" packages="forwardMode;analysisMode">
 			<var name="surfaceVelocityZonal" array_group="vel_zonal" units="m s^{-1}"
