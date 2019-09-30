@@ -402,16 +402,6 @@ PIO = /global/u2/h/hgkang/my_programs/ParallelIO_1.9.23/build/pio
 NETCDF = /opt/cray/pe/netcdf-hdf5parallel/4.6.1.3/GNU/8.2
 PNETCDF=/opt/cray/pe/parallel-netcdf/1.8.1.4/gnu/8.2
 
-FORTRILINOS_INSTALL = /global/u2/h/hgkang/my_programs/Trilinos_MPI/build/Trilinos_install
-FORTRILINOS_ROOT    = /global/u2/h/hgkang/my_programs/Trilinos_MPI
-FORTRILINOS_BUILD   = /global/u2/h/hgkang/my_programs/Trilinos_MPI/build
-
-FORTRILINOS_INCLUDES = -I$(FORTRILINOS_INSTALL)/include -I/$(FORTRILINOS_INSTALL)/lib  -I/$(FORTRILINOS_BUILD)/ForTrilinos/src/utils/src -I/$(FORTRILINOS_ROOT)/build/ForTrilinos/src/interface -I$(FORTRILINOS_BUILD)/packages/nox/src
-
-#FORTRILINOS_INCLUDES = -I$(FORTRILINOS_INSTALL)/include -I/$(FORTRILINOS_INSTALL)/lib -I/$(FORTRILINOS_ROOT)/ForTrilinos/src/utils/src/swig -I/$(FORTRILINOS_ROOT)/build/ForTrilinos/src/utils/src
-
-
-
 CPPINCLUDES = 
 FCINCLUDES = 
 LIBS = 
@@ -469,8 +459,6 @@ endif
 RM = rm -f
 CPP = cpp -P -traditional
 RANLIB = ranlib
-
-LIBS += -L$(FORTRILINOS_INSTALL)/lib
 
 ifdef CORE
 
@@ -596,13 +584,6 @@ ifeq "$(GEN_F90)" "true"
 else
 	override GEN_F90=false
 	GEN_F90_MESSAGE="MPAS was built with .F files."
-endif
-
-ifeq "$(FORTRILINOS)" "true"
-	FORTRILINOS_MESSAGE="ForTrilinos is on."
-else
-	override FORTRILINOS=false
-	FORTRILINOS_MESSAGE="ForTrilinos is off."
 endif
 
 ifeq "$(OPENMP)" "true"
@@ -735,8 +716,6 @@ endif
                  CORE="$(CORE)"\
                  AUTOCLEAN="$(AUTOCLEAN)" \
                  GEN_F90="$(GEN_F90)" \
-                 FORTRILINOS="$(FORTRILINOS)" \
-                 FORTRILINOS_INCLUDES="$(FORTRILINOS_INCLUDES)" \
                  NAMELIST_SUFFIX="$(NAMELIST_SUFFIX)" \
                  EXE_NAME="$(EXE_NAME)"
 
@@ -754,7 +733,6 @@ ifeq "$(AUTOCLEAN)" "true"
 	@echo $(AUTOCLEAN_MESSAGE)
 endif
 	@echo $(GEN_F90_MESSAGE)
-	@echo $(FORTRILINOS_MESSAGE)
 	@echo $(TIMER_MESSAGE)
 	@echo $(PIO_MESSAGE)
 	@echo "*******************************************************************************"
@@ -834,7 +812,6 @@ errmsg:
 	@echo "    OPENMP=true   - builds and links with OpenMP flags. Default is to not use OpenMP."
 	@echo "    USE_PIO2=true - links with the PIO 2 library. Default is to use the PIO 1.x library."
 	@echo "    PRECISION=single - builds with default single-precision real kind. Default is to use double-precision."
-	@echo "    FORTRILINOS=true - ENABLE ForTrilinos
 	@echo ""
 	@echo "Ensure that NETCDF, PNETCDF, PIO, and PAPI (if USE_PAPI=true) are environment variables"
 	@echo "that point to the absolute paths for the libraries."

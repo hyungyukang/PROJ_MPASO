@@ -14,7 +14,6 @@ all: shared libcvmix analysis_members libBGC
 	fi
 	ar -ru libdycore.a `find . -type f -name "*.o"`
 
-
 core_reg:
 	$(CPP) $(CPPFLAGS) $(CPPINCLUDES) Registry.xml > Registry_processed.xml
 

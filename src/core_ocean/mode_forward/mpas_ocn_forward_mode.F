@@ -485,7 +485,6 @@ module ocn_forward_mode
       logical, pointer :: config_use_ecosysTracers
       logical, pointer :: config_use_activeTracers_surface_restoring
       logical, pointer :: config_use_surface_salinity_monthly_restoring
-      logical, save :: precon = .true.
       
 
       ierr = 0
@@ -581,15 +580,6 @@ module ocn_forward_mode
 
            block_ptr => block_ptr % next
          end do
-
-!     if ( precon ) then
-!     !--- Preconditioner for SI --------------------------!
-!          precon = .false.
-!          print*, 'Preconditioner started ................' 
-!     call ocn_time_integrator_si_preconditioner(domain, dt)
-!          print*, 'Preconditioner completed ..............'
-!     !----------------------------------------------------!
-!     endif
 
          call mpas_timer_start("time integration")
 
@@ -717,10 +707,6 @@ module ocn_forward_mode
       call mpas_destroy_clock(domain % clock, ierr)
 
       call mpas_decomp_destroy_decomp_list(domain % decompositions)
-
-      !------------
-      call ocn_time_integration_fortrilinos_finalize()
-      !------------
 
    end function ocn_forward_mode_finalize!}}}
 

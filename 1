@@ -1,0 +1,1564 @@
+On branch si_AMG
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	deleted:    INSTALL
+	deleted:    LICENSE
+	modified:   Makefile
+	deleted:    Makefile_MPI
+	deleted:    Makefile_single
+	deleted:    README.md
+	deleted:    a.out
+	modified:   make.log
+	deleted:    make1.log
+	modified:   src/Makefile
+	deleted:    src/Makefile.in.ACME
+	deleted:    src/Makefile.in.CESM
+	deleted:    src/Makefile_MPI
+	deleted:    src/Makefile_single
+	deleted:    src/core_atmosphere/.gitignore
+	deleted:    src/core_atmosphere/Makefile
+	deleted:    src/core_atmosphere/Registry.xml
+	deleted:    src/core_atmosphere/build_options.mk
+	deleted:    src/core_atmosphere/diagnostics/Makefile
+	deleted:    src/core_atmosphere/diagnostics/README
+	deleted:    src/core_atmosphere/diagnostics/Registry_convective.xml
+	deleted:    src/core_atmosphere/diagnostics/Registry_diagnostics.xml
+	deleted:    src/core_atmosphere/diagnostics/Registry_isobaric.xml
+	deleted:    src/core_atmosphere/diagnostics/Registry_pv.xml
+	deleted:    src/core_atmosphere/diagnostics/Registry_soundings.xml
+	deleted:    src/core_atmosphere/diagnostics/Registry_template.xml
+	deleted:    src/core_atmosphere/diagnostics/convective_diagnostics.F
+	deleted:    src/core_atmosphere/diagnostics/isobaric_diagnostics.F
+	deleted:    src/core_atmosphere/diagnostics/mpas_atm_diagnostic_template.F
+	deleted:    src/core_atmosphere/diagnostics/mpas_atm_diagnostics_manager.F
+	deleted:    src/core_atmosphere/diagnostics/mpas_atm_diagnostics_utils.F
+	deleted:    src/core_atmosphere/diagnostics/pv_diagnostics.F
+	deleted:    src/core_atmosphere/diagnostics/soundings.F
+	deleted:    src/core_atmosphere/dynamics/.gitignore
+	deleted:    src/core_atmosphere/dynamics/Makefile
+	deleted:    src/core_atmosphere/dynamics/mpas_atm_iau.F
+	deleted:    src/core_atmosphere/dynamics/mpas_atm_time_integration.F
+	deleted:    src/core_atmosphere/mpas_atm_core.F
+	deleted:    src/core_atmosphere/mpas_atm_core_interface.F
+	deleted:    src/core_atmosphere/mpas_atm_dimensions.F
+	deleted:    src/core_atmosphere/mpas_atm_threading.F
+	deleted:    src/core_atmosphere/physics/.gitignore
+	deleted:    src/core_atmosphere/physics/Makefile
+	deleted:    src/core_atmosphere/physics/checkout_data_files.sh
+	deleted:    src/core_atmosphere/physics/mpas_atmphys_camrad_init.F
+	deleted:    src/core_atmosphere/physics/mpas_atmphys_constants.F
+	deleted:    src/core_atmosphere/physics/mpas_atmphys_control.F
+	deleted:    src/core_atmosphere/physics/mpas_atmphys_date_time.F
+	deleted:    src/core_atmosphere/physics/mpas_atmphys_driver.F
+	deleted:    src/core_atmosphere/physics/mpas_atmphys_driver_cloudiness.F
+	deleted:    src/core_atmosphere/physics/mpas_atmphys_driver_convection.F
+	deleted:    src/core_atmosphere/physics/mpas_atmphys_driver_gwdo.F
+	deleted:    src/core_atmosphere/physics/mpas_atmphys_driver_lsm.F
+	deleted:    src/core_atmosphere/physics/mpas_atmphys_driver_microphysics.F
+	deleted:    src/core_atmosphere/physics/mpas_atmphys_driver_oml.F
+	deleted:    src/core_atmosphere/physics/mpas_atmphys_driver_pbl.F
+	deleted:    src/core_atmosphere/physics/mpas_atmphys_driver_radiation_lw.F
+	deleted:    src/core_atmosphere/physics/mpas_atmphys_driver_radiation_sw.F
+	deleted:    src/core_atmosphere/physics/mpas_atmphys_driver_sfclayer.F
+	deleted:    src/core_atmosphere/physics/mpas_atmphys_finalize.F
+	deleted:    src/core_atmosphere/physics/mpas_atmphys_functions.F
+	deleted:    src/core_atmosphere/physics/mpas_atmphys_init.F
+	deleted:    src/core_atmosphere/physics/mpas_atmphys_init_microphysics.F
+	deleted:    src/core_atmosphere/physics/mpas_atmphys_initialize_real.F
+	deleted:    src/core_atmosphere/physics/mpas_atmphys_interface.F
+	deleted:    src/core_atmosphere/physics/mpas_atmphys_landuse.F
+	deleted:    src/core_atmosphere/physics/mpas_atmphys_lsm_noahinit.F
+	deleted:    src/core_atmosphere/physics/mpas_atmphys_manager.F
+	deleted:    src/core_atmosphere/physics/mpas_atmphys_o3climatology.F
+	deleted:    src/core_atmosphere/physics/mpas_atmphys_packages.F
+	deleted:    src/core_atmosphere/physics/mpas_atmphys_rrtmg_lwinit.F
+	deleted:    src/core_atmosphere/physics/mpas_atmphys_rrtmg_swinit.F
+	deleted:    src/core_atmosphere/physics/mpas_atmphys_todynamics.F
+	deleted:    src/core_atmosphere/physics/mpas_atmphys_update.F
+	deleted:    src/core_atmosphere/physics/mpas_atmphys_update_surface.F
+	deleted:    src/core_atmosphere/physics/mpas_atmphys_utilities.F
+	deleted:    src/core_atmosphere/physics/mpas_atmphys_vars.F
+	deleted:    src/core_atmosphere/physics/physics_wrf/LICENSE
+	deleted:    src/core_atmosphere/physics/physics_wrf/Makefile
+	deleted:    src/core_atmosphere/physics/physics_wrf/libmassv.F
+	deleted:    src/core_atmosphere/physics/physics_wrf/module_bl_gwdo.F
+	deleted:    src/core_atmosphere/physics/physics_wrf/module_bl_mynn.F
+	deleted:    src/core_atmosphere/physics/physics_wrf/module_bl_ysu.F
+	deleted:    src/core_atmosphere/physics/physics_wrf/module_cam_error_function.F
+	deleted:    src/core_atmosphere/physics/physics_wrf/module_cam_shr_kind_mod.F
+	deleted:    src/core_atmosphere/physics/physics_wrf/module_cam_support.F
+	deleted:    src/core_atmosphere/physics/physics_wrf/module_cu_gf.mpas.F
+	deleted:    src/core_atmosphere/physics/physics_wrf/module_cu_kfeta.F
+	deleted:    src/core_atmosphere/physics/physics_wrf/module_cu_ntiedtke.F
+	deleted:    src/core_atmosphere/physics/physics_wrf/module_cu_tiedtke.F
+	deleted:    src/core_atmosphere/physics/physics_wrf/module_mp_kessler.F
+	deleted:    src/core_atmosphere/physics/physics_wrf/module_mp_radar.F
+	deleted:    src/core_atmosphere/physics/physics_wrf/module_mp_thompson.F
+	deleted:    src/core_atmosphere/physics/physics_wrf/module_mp_thompson_cldfra3.F
+	deleted:    src/core_atmosphere/physics/physics_wrf/module_mp_wsm6.F
+	deleted:    src/core_atmosphere/physics/physics_wrf/module_ra_cam.F
+	deleted:    src/core_atmosphere/physics/physics_wrf/module_ra_cam_support.F
+	deleted:    src/core_atmosphere/physics/physics_wrf/module_ra_rrtmg_lw.F
+	deleted:    src/core_atmosphere/physics/physics_wrf/module_ra_rrtmg_sw.F
+	deleted:    src/core_atmosphere/physics/physics_wrf/module_ra_rrtmg_vinterp.F
+	deleted:    src/core_atmosphere/physics/physics_wrf/module_sf_bem.F
+	deleted:    src/core_atmosphere/physics/physics_wrf/module_sf_bep.F
+	deleted:    src/core_atmosphere/physics/physics_wrf/module_sf_bep_bem.F
+	deleted:    src/core_atmosphere/physics/physics_wrf/module_sf_mynn.F
+	deleted:    src/core_atmosphere/physics/physics_wrf/module_sf_noahdrv.F
+	deleted:    src/core_atmosphere/physics/physics_wrf/module_sf_noahlsm.F
+	deleted:    src/core_atmosphere/physics/physics_wrf/module_sf_oml.F
+	deleted:    src/core_atmosphere/physics/physics_wrf/module_sf_sfcdiags.F
+	deleted:    src/core_atmosphere/physics/physics_wrf/module_sf_sfclay.F
+	deleted:    src/core_atmosphere/physics/physics_wrf/module_sf_urban.F
+	deleted:    src/core_atmosphere/utils/Makefile
+	deleted:    src/core_atmosphere/utils/atmphys_build_tables_thompson.F
+	deleted:    src/core_atmosphere/utils/build_tables.F
+	deleted:    src/core_init_atmosphere/Makefile
+	deleted:    src/core_init_atmosphere/Registry.xml
+	deleted:    src/core_init_atmosphere/build_options.mk
+	deleted:    src/core_init_atmosphere/mpas_atm_advection.F
+	deleted:    src/core_init_atmosphere/mpas_atmphys_constants.F
+	deleted:    src/core_init_atmosphere/mpas_atmphys_date_time.F
+	deleted:    src/core_init_atmosphere/mpas_atmphys_functions.F
+	deleted:    src/core_init_atmosphere/mpas_atmphys_initialize_real.F
+	deleted:    src/core_init_atmosphere/mpas_atmphys_utilities.F
+	deleted:    src/core_init_atmosphere/mpas_init_atm_bitarray.F
+	deleted:    src/core_init_atmosphere/mpas_init_atm_cases.F
+	deleted:    src/core_init_atmosphere/mpas_init_atm_core.F
+	deleted:    src/core_init_atmosphere/mpas_init_atm_core_interface.F
+	deleted:    src/core_init_atmosphere/mpas_init_atm_gwd.F
+	deleted:    src/core_init_atmosphere/mpas_init_atm_hinterp.F
+	deleted:    src/core_init_atmosphere/mpas_init_atm_llxy.F
+	deleted:    src/core_init_atmosphere/mpas_init_atm_queue.F
+	deleted:    src/core_init_atmosphere/mpas_init_atm_read_met.F
+	deleted:    src/core_init_atmosphere/mpas_init_atm_static.F
+	deleted:    src/core_init_atmosphere/mpas_init_atm_surface.F
+	deleted:    src/core_init_atmosphere/mpas_init_atm_vinterp.F
+	deleted:    src/core_init_atmosphere/read_geogrid.c
+	deleted:    src/core_landice/.gitignore
+	deleted:    src/core_landice/Makefile
+	deleted:    src/core_landice/Registry.xml
+	deleted:    src/core_landice/Registry_subglacial_hydro.xml
+	deleted:    src/core_landice/analysis_members/Makefile
+	deleted:    src/core_landice/analysis_members/Registry_TEMPLATE.xml
+	deleted:    src/core_landice/analysis_members/Registry_analysis_members.xml
+	deleted:    src/core_landice/analysis_members/Registry_global_stats.xml
+	deleted:    src/core_landice/analysis_members/Registry_regional_stats.xml
+	deleted:    src/core_landice/analysis_members/mpas_li_TEMPLATE.F
+	deleted:    src/core_landice/analysis_members/mpas_li_analysis_driver.F
+	deleted:    src/core_landice/analysis_members/mpas_li_global_stats.F
+	deleted:    src/core_landice/analysis_members/mpas_li_regional_stats.F
+	deleted:    src/core_landice/build_options.mk
+	deleted:    src/core_landice/external_albany_version
+	deleted:    src/core_landice/external_trilinos_version
+	deleted:    src/core_landice/mode_forward/Interface_velocity_solver.cpp
+	deleted:    src/core_landice/mode_forward/Interface_velocity_solver.hpp
+	deleted:    src/core_landice/mode_forward/Makefile
+	deleted:    src/core_landice/mode_forward/mpas_li_advection.F
+	deleted:    src/core_landice/mode_forward/mpas_li_calving.F
+	deleted:    src/core_landice/mode_forward/mpas_li_core.F
+	deleted:    src/core_landice/mode_forward/mpas_li_core_interface.F
+	deleted:    src/core_landice/mode_forward/mpas_li_diagnostic_vars.F
+	deleted:    src/core_landice/mode_forward/mpas_li_sia.F
+	deleted:    src/core_landice/mode_forward/mpas_li_statistics.F
+	deleted:    src/core_landice/mode_forward/mpas_li_subglacial_hydro.F
+	deleted:    src/core_landice/mode_forward/mpas_li_thermal.F
+	deleted:    src/core_landice/mode_forward/mpas_li_time_integration.F
+	deleted:    src/core_landice/mode_forward/mpas_li_time_integration_fe.F
+	deleted:    src/core_landice/mode_forward/mpas_li_velocity.F
+	deleted:    src/core_landice/mode_forward/mpas_li_velocity_external.F
+	deleted:    src/core_landice/mode_forward/mpas_li_velocity_simple.F
+	deleted:    src/core_landice/shared/Makefile
+	deleted:    src/core_landice/shared/mpas_li_constants.F
+	deleted:    src/core_landice/shared/mpas_li_mask.F
+	deleted:    src/core_landice/shared/mpas_li_setup.F
+	deleted:    src/core_ocean/.gitignore
+	modified:   src/core_ocean/1
+	modified:   src/core_ocean/Makefile
+	deleted:    src/core_ocean/analysis_members/Registry_TEMPLATE.xml
+	deleted:    src/core_ocean/analysis_members/mpas_ocn_TEMPLATE.F
+	deleted:    src/core_ocean/analysis_members/regional_stats_inc/README.md
+	deleted:    src/core_ocean/analysis_members/regional_stats_inc/regional_field_1d.F
+	deleted:    src/core_ocean/analysis_members/regional_stats_inc/regional_field_nd.F
+	deleted:    src/core_ocean/analysis_members/regional_stats_inc/regional_op_avg.F
+	deleted:    src/core_ocean/analysis_members/regional_stats_inc/regional_op_avg1d.F
+	deleted:    src/core_ocean/analysis_members/regional_stats_inc/regional_op_max.F
+	deleted:    src/core_ocean/analysis_members/regional_stats_inc/regional_op_max1d.F
+	deleted:    src/core_ocean/analysis_members/regional_stats_inc/regional_op_min.F
+	deleted:    src/core_ocean/analysis_members/regional_stats_inc/regional_op_min1d.F
+	deleted:    src/core_ocean/analysis_members/regional_stats_inc/regional_op_start.F
+	deleted:    src/core_ocean/analysis_members/regional_stats_inc/regional_op_sumsos.F
+	deleted:    src/core_ocean/analysis_members/regional_stats_inc/regional_op_sumsos1d.F
+	deleted:    src/core_ocean/analysis_members/regional_stats_inc/regional_opvert_avg.F
+	deleted:    src/core_ocean/analysis_members/regional_stats_inc/regional_opvert_max.F
+	deleted:    src/core_ocean/analysis_members/regional_stats_inc/regional_opvert_min.F
+	deleted:    src/core_ocean/analysis_members/regional_stats_inc/regional_opvert_start.F
+	deleted:    src/core_ocean/analysis_members/regional_stats_inc/regional_opvert_sumsos.F
+	deleted:    src/core_ocean/analysis_members/rpn_calc_inc/binary_op_0d_0d.F
+	deleted:    src/core_ocean/analysis_members/rpn_calc_inc/binary_op_0d_1d.F
+	deleted:    src/core_ocean/analysis_members/rpn_calc_inc/binary_op_0d_2d.F
+	deleted:    src/core_ocean/analysis_members/rpn_calc_inc/binary_op_1d_0d.F
+	deleted:    src/core_ocean/analysis_members/rpn_calc_inc/binary_op_1d_1d_diff.F
+	deleted:    src/core_ocean/analysis_members/rpn_calc_inc/binary_op_1d_1d_same.F
+	deleted:    src/core_ocean/analysis_members/rpn_calc_inc/binary_op_1d_2d_first.F
+	deleted:    src/core_ocean/analysis_members/rpn_calc_inc/binary_op_1d_2d_second.F
+	deleted:    src/core_ocean/analysis_members/rpn_calc_inc/binary_op_2d_0d.F
+	deleted:    src/core_ocean/analysis_members/rpn_calc_inc/binary_op_2d_1d_first.F
+	deleted:    src/core_ocean/analysis_members/rpn_calc_inc/binary_op_2d_1d_second.F
+	deleted:    src/core_ocean/analysis_members/rpn_calc_inc/binary_op_2d_2d.F
+	deleted:    src/core_ocean/analysis_members/rpn_calc_inc/binary_op_dispatch.F
+	deleted:    src/core_ocean/analysis_members/rpn_calc_inc/field_0d_from_1d.F
+	deleted:    src/core_ocean/analysis_members/rpn_calc_inc/field_1d_from_2d.F
+	deleted:    src/core_ocean/analysis_members/rpn_calc_inc/field_2d_from_1ds.F
+	deleted:    src/core_ocean/analysis_members/rpn_calc_inc/reduce_op_1d.F
+	deleted:    src/core_ocean/analysis_members/rpn_calc_inc/reduce_op_2d.F
+	deleted:    src/core_ocean/analysis_members/rpn_calc_inc/reduce_op_dispatch.F
+	deleted:    src/core_ocean/analysis_members/time_series_inc/copy_field.F
+	deleted:    src/core_ocean/analysis_members/time_series_inc/operate.F
+	modified:   src/core_ocean/get_BGC.sh
+	modified:   src/core_ocean/get_cvmix.sh
+	modified:   src/core_ocean/mode_forward/Makefile
+	deleted:    src/core_ocean/mode_forward/Makefile_fort
+	deleted:    src/core_ocean/mode_forward/e3sm_fortrilinos_mod.F90
+	deleted:    src/core_ocean/mode_forward/e3sm_implicit_mod.F90
+	deleted:    src/core_ocean/mode_forward/e3sm_model_evaluator_mod.F90
+	deleted:    src/core_ocean/mode_forward/e3sm_residual_mod.F90
+	deleted:    src/core_ocean/mode_forward/mpas_ocn_derived_type_mod.F90
+	deleted:    src/core_ocean/mode_forward/mpas_ocn_fortrilinos_imp_mod.F90
+	deleted:    src/core_ocean/mode_forward/mpas_ocn_fortrilinos_imp_mod_backup.F90
+	deleted:    src/core_ocean/mode_forward/mpas_ocn_fortrilinos_model_evaluator_mod.F90
+	deleted:    src/core_ocean/mode_forward/mpas_ocn_fortrilinos_model_evaluator_mod_backup.F90
+	deleted:    src/core_ocean/mode_forward/mpas_ocn_fortrilinos_residual_mod.F90
+	modified:   src/core_ocean/mode_forward/mpas_ocn_forward_mode.F
+	modified:   src/core_ocean/mode_forward/mpas_ocn_time_integration_si.F
+	deleted:    src/core_ocean/mode_init/Registry_TEMPLATE.xml
+	deleted:    src/core_ocean/mode_init/mpas_ocn_init_TEMPLATE.F
+	modified:   src/core_ocean/shared/mpas_ocn_tracer_ecosys.F
+	deleted:    src/core_ocean/tracer_groups/Registry_TEMPLATEGRP.xml
+	deleted:    src/core_seaice/Makefile
+	deleted:    src/core_seaice/Registry.xml
+	deleted:    src/core_seaice/analysis_members/Makefile
+	deleted:    src/core_seaice/analysis_members/Registry_seaice_TEMPLATE.xml
+	deleted:    src/core_seaice/analysis_members/Registry_seaice_analysis_members.xml
+	deleted:    src/core_seaice/analysis_members/Registry_seaice_area_variables.xml
+	deleted:    src/core_seaice/analysis_members/Registry_seaice_conservation_check.xml
+	deleted:    src/core_seaice/analysis_members/Registry_seaice_geographical_vectors.xml
+	deleted:    src/core_seaice/analysis_members/Registry_seaice_high_frequency_output.xml
+	deleted:    src/core_seaice/analysis_members/Registry_seaice_ice_present.xml
+	deleted:    src/core_seaice/analysis_members/Registry_seaice_ice_shelves.xml
+	deleted:    src/core_seaice/analysis_members/Registry_seaice_load_balance.xml
+	deleted:    src/core_seaice/analysis_members/Registry_seaice_maximum_ice_presence.xml
+	deleted:    src/core_seaice/analysis_members/Registry_seaice_miscellaneous.xml
+	deleted:    src/core_seaice/analysis_members/Registry_seaice_pointwise_stats.xml
+	deleted:    src/core_seaice/analysis_members/Registry_seaice_pond_diagnostics.xml
+	deleted:    src/core_seaice/analysis_members/Registry_seaice_regional_statistics.xml
+	deleted:    src/core_seaice/analysis_members/Registry_seaice_ridging_diagnostics.xml
+	deleted:    src/core_seaice/analysis_members/Registry_seaice_temperatures.xml
+	deleted:    src/core_seaice/analysis_members/Registry_seaice_time_series_stats.xml
+	deleted:    src/core_seaice/analysis_members/Registry_seaice_time_series_stats_climatology.xml
+	deleted:    src/core_seaice/analysis_members/Registry_seaice_time_series_stats_custom.xml
+	deleted:    src/core_seaice/analysis_members/Registry_seaice_time_series_stats_daily.xml
+	deleted:    src/core_seaice/analysis_members/Registry_seaice_time_series_stats_monthly.xml
+	deleted:    src/core_seaice/analysis_members/Registry_seaice_unit_conversion.xml
+	deleted:    src/core_seaice/analysis_members/mpas_seaice_TEMPLATE.F
+	deleted:    src/core_seaice/analysis_members/mpas_seaice_analysis_driver.F
+	deleted:    src/core_seaice/analysis_members/mpas_seaice_area_variables.F
+	deleted:    src/core_seaice/analysis_members/mpas_seaice_conservation_check.F
+	deleted:    src/core_seaice/analysis_members/mpas_seaice_deactivate_unneeded_fields.F
+	deleted:    src/core_seaice/analysis_members/mpas_seaice_geographical_vectors.F
+	deleted:    src/core_seaice/analysis_members/mpas_seaice_high_frequency_output.F
+	deleted:    src/core_seaice/analysis_members/mpas_seaice_ice_present.F
+	deleted:    src/core_seaice/analysis_members/mpas_seaice_ice_shelves.F
+	deleted:    src/core_seaice/analysis_members/mpas_seaice_load_balance.F
+	deleted:    src/core_seaice/analysis_members/mpas_seaice_maximum_ice_presence.F
+	deleted:    src/core_seaice/analysis_members/mpas_seaice_miscellaneous.F
+	deleted:    src/core_seaice/analysis_members/mpas_seaice_pointwise_stats.F
+	deleted:    src/core_seaice/analysis_members/mpas_seaice_pond_diagnostics.F
+	deleted:    src/core_seaice/analysis_members/mpas_seaice_regional_statistics.F
+	deleted:    src/core_seaice/analysis_members/mpas_seaice_ridging_diagnostics.F
+	deleted:    src/core_seaice/analysis_members/mpas_seaice_temperatures.F
+	deleted:    src/core_seaice/analysis_members/mpas_seaice_time_series_stats.F
+	deleted:    src/core_seaice/analysis_members/mpas_seaice_unit_conversion.F
+	deleted:    src/core_seaice/analysis_members/time_series_inc/copy_field.F
+	deleted:    src/core_seaice/analysis_members/time_series_inc/copy_field_1.inc
+	deleted:    src/core_seaice/analysis_members/time_series_inc/copy_field_2.inc
+	deleted:    src/core_seaice/analysis_members/time_series_inc/operate.F
+	deleted:    src/core_seaice/analysis_members/time_series_inc/operate_1.inc
+	deleted:    src/core_seaice/analysis_members/time_series_inc/operate_2.inc
+	deleted:    src/core_seaice/analysis_members/time_series_inc/operate_2_sos.inc
+	deleted:    src/core_seaice/analysis_members/time_series_inc/operate_3.inc
+	deleted:    src/core_seaice/build_options.mk
+	deleted:    src/core_seaice/column/.gitignore
+	deleted:    src/core_seaice/column/Makefile
+	deleted:    src/core_seaice/column/REVISION
+	deleted:    src/core_seaice/column/documentation/ACMECollabAgreement_CICE_Hunke_Jul2015.pdf
+	deleted:    src/core_seaice/column/documentation/DocForChanges.pdf
+	deleted:    src/core_seaice/column/documentation/DocForChanges.rtf
+	deleted:    src/core_seaice/column/documentation/README
+	deleted:    src/core_seaice/column/ice_aerosol.F90
+	deleted:    src/core_seaice/column/ice_age.F90
+	deleted:    src/core_seaice/column/ice_algae.F90
+	deleted:    src/core_seaice/column/ice_atmo.F90
+	deleted:    src/core_seaice/column/ice_brine.F90
+	deleted:    src/core_seaice/column/ice_colpkg.F90
+	deleted:    src/core_seaice/column/ice_colpkg_shared.F90
+	deleted:    src/core_seaice/column/ice_colpkg_tracers.F90
+	deleted:    src/core_seaice/column/ice_firstyear.F90
+	deleted:    src/core_seaice/column/ice_flux_colpkg.F90
+	deleted:    src/core_seaice/column/ice_itd.F90
+	deleted:    src/core_seaice/column/ice_kinds_mod.F90
+	deleted:    src/core_seaice/column/ice_mechred.F90
+	deleted:    src/core_seaice/column/ice_meltpond_cesm.F90
+	deleted:    src/core_seaice/column/ice_meltpond_lvl.F90
+	deleted:    src/core_seaice/column/ice_meltpond_topo.F90
+	deleted:    src/core_seaice/column/ice_mushy_physics.F90
+	deleted:    src/core_seaice/column/ice_orbital.F90
+	deleted:    src/core_seaice/column/ice_shortwave.F90
+	deleted:    src/core_seaice/column/ice_therm_0layer.F90
+	deleted:    src/core_seaice/column/ice_therm_bl99.F90
+	deleted:    src/core_seaice/column/ice_therm_itd.F90
+	deleted:    src/core_seaice/column/ice_therm_mushy.F90
+	deleted:    src/core_seaice/column/ice_therm_shared.F90
+	deleted:    src/core_seaice/column/ice_therm_vertical.F90
+	deleted:    src/core_seaice/column/ice_warnings.F90
+	deleted:    src/core_seaice/column/ice_zbgc.F90
+	deleted:    src/core_seaice/column/ice_zbgc_shared.F90
+	deleted:    src/core_seaice/column/ice_zsalinity.F90
+	deleted:    src/core_seaice/model_forward/Makefile
+	deleted:    src/core_seaice/model_forward/mpas_seaice_core.F
+	deleted:    src/core_seaice/model_forward/mpas_seaice_core_interface.F
+	deleted:    src/core_seaice/shared/Makefile
+	deleted:    src/core_seaice/shared/mpas_seaice_advection.F
+	deleted:    src/core_seaice/shared/mpas_seaice_advection_incremental_remap.F
+	deleted:    src/core_seaice/shared/mpas_seaice_advection_incremental_remap_tracers.F
+	deleted:    src/core_seaice/shared/mpas_seaice_advection_upwind.F
+	deleted:    src/core_seaice/shared/mpas_seaice_column.F
+	deleted:    src/core_seaice/shared/mpas_seaice_constants.F
+	deleted:    src/core_seaice/shared/mpas_seaice_diagnostics.F
+	deleted:    src/core_seaice/shared/mpas_seaice_error.F
+	deleted:    src/core_seaice/shared/mpas_seaice_forcing.F
+	deleted:    src/core_seaice/shared/mpas_seaice_initialize.F
+	deleted:    src/core_seaice/shared/mpas_seaice_mesh.F
+	deleted:    src/core_seaice/shared/mpas_seaice_numerics.F
+	deleted:    src/core_seaice/shared/mpas_seaice_testing.F
+	deleted:    src/core_seaice/shared/mpas_seaice_time_integration.F
+	deleted:    src/core_seaice/shared/mpas_seaice_unit_test.F
+	deleted:    src/core_seaice/shared/mpas_seaice_velocity_solver.F
+	deleted:    src/core_seaice/shared/mpas_seaice_velocity_solver_constitutive_relation.F
+	deleted:    src/core_seaice/shared/mpas_seaice_velocity_solver_pwl.F
+	deleted:    src/core_seaice/shared/mpas_seaice_velocity_solver_unit_tests.F
+	deleted:    src/core_seaice/shared/mpas_seaice_velocity_solver_variational.F
+	deleted:    src/core_seaice/shared/mpas_seaice_velocity_solver_variational_shared.F
+	deleted:    src/core_seaice/shared/mpas_seaice_velocity_solver_wachspress.F
+	deleted:    src/core_seaice/shared/mpas_seaice_velocity_solver_weak.F
+	deleted:    src/core_sw/Makefile
+	deleted:    src/core_sw/Registry.xml
+	deleted:    src/core_sw/build_options.mk
+	deleted:    src/core_sw/mpas_sw_advection.F
+	deleted:    src/core_sw/mpas_sw_constants.F
+	deleted:    src/core_sw/mpas_sw_core.F
+	deleted:    src/core_sw/mpas_sw_core_interface.F
+	deleted:    src/core_sw/mpas_sw_global_diagnostics.F
+	deleted:    src/core_sw/mpas_sw_test_cases.F
+	deleted:    src/core_test/Makefile
+	deleted:    src/core_test/Registry.xml
+	deleted:    src/core_test/build_options.mk
+	deleted:    src/core_test/mpas_test_core.F
+	deleted:    src/core_test/mpas_test_core_field_tests.F
+	deleted:    src/core_test/mpas_test_core_halo_exch.F
+	deleted:    src/core_test/mpas_test_core_interface.F
+	deleted:    src/core_test/mpas_test_core_sorting.F
+	deleted:    src/core_test/mpas_test_core_streams.F
+	deleted:    src/core_test/mpas_test_core_timekeeping_tests.F
+	deleted:    src/external/esmf_time_f90/.gitignore
+	deleted:    src/external/esmf_time_f90/ChangeLog
+	deleted:    src/external/esmf_time_f90/README
+	deleted:    src/external/ezxml/LICENSE
+	deleted:    src/tools/input_gen/.gitignore
+	deleted:    src/tools/registry/.gitignore
+	deleted:    src/tools/registry/Registry.xsd
+	deleted:    testing_and_setup/compass/.gitignore
+	deleted:    testing_and_setup/compass/clean_testcase.py
+	deleted:    testing_and_setup/compass/doc/README.regression_suite
+	deleted:    testing_and_setup/compass/doc/README.run_config
+	deleted:    testing_and_setup/compass/doc/README.template
+	deleted:    testing_and_setup/compass/general.config.landice
+	deleted:    testing_and_setup/compass/general.config.test
+	deleted:    testing_and_setup/compass/landice/EISMINT1/50000m/EISMINT-1_50000m_template.xml
+	deleted:    testing_and_setup/compass/landice/EISMINT1/50000m/MovingMargin1/config_driver.xml
+	deleted:    testing_and_setup/compass/landice/EISMINT1/50000m/MovingMargin1/config_run_model_step.xml
+	deleted:    testing_and_setup/compass/landice/EISMINT1/50000m/MovingMargin1/config_setup_mesh_step.xml
+	deleted:    testing_and_setup/compass/landice/EISMINT1/50000m/periodic_hex.namelist.input
+	deleted:    testing_and_setup/compass/landice/EISMINT1/check_output_eismint-mm1.py
+	deleted:    testing_and_setup/compass/landice/EISMINT1/setup_initial_conditions_EISMINT1-MovingMargin-1.py
+	deleted:    testing_and_setup/compass/landice/EISMINT2/25000m/EISMINT2_25000m_template.xml
+	deleted:    testing_and_setup/compass/landice/EISMINT2/25000m/decomposition_test/config_driver.xml
+	deleted:    testing_and_setup/compass/landice/EISMINT2/25000m/decomposition_test/config_experiment_F_1p.xml
+	deleted:    testing_and_setup/compass/landice/EISMINT2/25000m/decomposition_test/config_experiment_F_4p.xml
+	deleted:    testing_and_setup/compass/landice/EISMINT2/25000m/decomposition_test/config_setup_mesh_step.xml
+	deleted:    testing_and_setup/compass/landice/EISMINT2/25000m/decomposition_test/output_comparison.xml
+	deleted:    testing_and_setup/compass/landice/EISMINT2/25000m/periodic_hex.namelist.input
+	deleted:    testing_and_setup/compass/landice/EISMINT2/25000m/standard_experiments/config_driver.xml
+	deleted:    testing_and_setup/compass/landice/EISMINT2/25000m/standard_experiments/config_experiment_A.xml
+	deleted:    testing_and_setup/compass/landice/EISMINT2/25000m/standard_experiments/config_experiment_B.xml
+	deleted:    testing_and_setup/compass/landice/EISMINT2/25000m/standard_experiments/config_experiment_C.xml
+	deleted:    testing_and_setup/compass/landice/EISMINT2/25000m/standard_experiments/config_experiment_D.xml
+	deleted:    testing_and_setup/compass/landice/EISMINT2/25000m/standard_experiments/config_experiment_E.xml
+	deleted:    testing_and_setup/compass/landice/EISMINT2/25000m/standard_experiments/config_experiment_F.xml
+	deleted:    testing_and_setup/compass/landice/EISMINT2/25000m/standard_experiments/config_experiment_G.xml
+	deleted:    testing_and_setup/compass/landice/EISMINT2/25000m/standard_experiments/config_setup_mesh_step.xml
+	deleted:    testing_and_setup/compass/landice/EISMINT2/setup_initial_conditions_EISMINT2.py
+	deleted:    testing_and_setup/compass/landice/EISMINT2/visualize_output_EISMINT2.py
+	deleted:    testing_and_setup/compass/landice/MISMIP+/README.mismip+
+	deleted:    testing_and_setup/compass/landice/MISMIP+/albany_input.xml
+	deleted:    testing_and_setup/compass/landice/MISMIP+/cull_cells_for_MISMIP.py
+	deleted:    testing_and_setup/compass/landice/MISMIP+/mismip+PlotGL.py
+	deleted:    testing_and_setup/compass/landice/MISMIP+/mismip+ResolutionAnalysis.py
+	deleted:    testing_and_setup/compass/landice/MISMIP+/mismip+WriteGL.py
+	deleted:    testing_and_setup/compass/landice/MISMIP+/mismip+_template.xml
+	deleted:    testing_and_setup/compass/landice/MISMIP+/setup_mismip+_initial_conditions.py
+	deleted:    testing_and_setup/compass/landice/MISMIP+/setup_mismip+_subdirectories.py
+	deleted:    testing_and_setup/compass/landice/MISMIP+/standard_resolution/standard_test/README
+	deleted:    testing_and_setup/compass/landice/MISMIP+/standard_resolution/standard_test/config_setup_experiments.xml
+	deleted:    testing_and_setup/compass/landice/MISMIP+/standard_resolution/standard_test/namelist.input
+	deleted:    testing_and_setup/compass/landice/MISMIP+/standard_resolution/standard_test/namelist.input.1000m
+	deleted:    testing_and_setup/compass/landice/MISMIP+/standard_resolution/standard_test/namelist.input.2000m
+	deleted:    testing_and_setup/compass/landice/MISMIP+/standard_resolution/standard_test/namelist.input.4000m
+	deleted:    testing_and_setup/compass/landice/MISMIP+/standard_resolution/standard_test/namelist.input.500m
+	deleted:    testing_and_setup/compass/landice/MISMIP+/standard_resolution/standard_test/namelist.input.8000m
+	deleted:    testing_and_setup/compass/landice/MISMIP3D/README
+	deleted:    testing_and_setup/compass/landice/MISMIP3D/README.P75S_R
+	deleted:    testing_and_setup/compass/landice/MISMIP3D/albany_input.xml
+	deleted:    testing_and_setup/compass/landice/MISMIP3D/cull_cells_for_MISMIP.py
+	deleted:    testing_and_setup/compass/landice/MISMIP3D/full_width/Stnd/config_10000m.xml
+	deleted:    testing_and_setup/compass/landice/MISMIP3D/full_width/Stnd/config_1000m.xml
+	deleted:    testing_and_setup/compass/landice/MISMIP3D/full_width/Stnd/config_2000m.xml
+	deleted:    testing_and_setup/compass/landice/MISMIP3D/full_width/Stnd/config_250m.xml
+	deleted:    testing_and_setup/compass/landice/MISMIP3D/full_width/Stnd/config_5000m.xml
+	deleted:    testing_and_setup/compass/landice/MISMIP3D/full_width/Stnd/config_500m.xml
+	deleted:    testing_and_setup/compass/landice/MISMIP3D/full_width/Stnd/config_P75.xml
+	deleted:    testing_and_setup/compass/landice/MISMIP3D/full_width/Stnd/config_driver.xml
+	deleted:    testing_and_setup/compass/landice/MISMIP3D/full_width/Stnd/namelist.input.10000m
+	deleted:    testing_and_setup/compass/landice/MISMIP3D/full_width/Stnd/namelist.input.1000m
+	deleted:    testing_and_setup/compass/landice/MISMIP3D/full_width/Stnd/namelist.input.2000m
+	deleted:    testing_and_setup/compass/landice/MISMIP3D/full_width/Stnd/namelist.input.250m
+	deleted:    testing_and_setup/compass/landice/MISMIP3D/full_width/Stnd/namelist.input.5000m
+	deleted:    testing_and_setup/compass/landice/MISMIP3D/full_width/Stnd/namelist.input.500m
+	deleted:    testing_and_setup/compass/landice/MISMIP3D/minimal_width/Stnd/config_10000m.xml
+	deleted:    testing_and_setup/compass/landice/MISMIP3D/minimal_width/Stnd/config_1000m.xml
+	deleted:    testing_and_setup/compass/landice/MISMIP3D/minimal_width/Stnd/config_2000m.xml
+	deleted:    testing_and_setup/compass/landice/MISMIP3D/minimal_width/Stnd/config_250m.xml
+	deleted:    testing_and_setup/compass/landice/MISMIP3D/minimal_width/Stnd/config_5000m.xml
+	deleted:    testing_and_setup/compass/landice/MISMIP3D/minimal_width/Stnd/config_500m.xml
+	deleted:    testing_and_setup/compass/landice/MISMIP3D/minimal_width/Stnd/config_driver.xml
+	deleted:    testing_and_setup/compass/landice/MISMIP3D/minimal_width/Stnd/namelist.input.10000m
+	deleted:    testing_and_setup/compass/landice/MISMIP3D/minimal_width/Stnd/namelist.input.1000m
+	deleted:    testing_and_setup/compass/landice/MISMIP3D/minimal_width/Stnd/namelist.input.2000m
+	deleted:    testing_and_setup/compass/landice/MISMIP3D/minimal_width/Stnd/namelist.input.250m
+	deleted:    testing_and_setup/compass/landice/MISMIP3D/minimal_width/Stnd/namelist.input.5000m
+	deleted:    testing_and_setup/compass/landice/MISMIP3D/minimal_width/Stnd/namelist.input.500m
+	deleted:    testing_and_setup/compass/landice/MISMIP3D/mismip_template.xml
+	deleted:    testing_and_setup/compass/landice/MISMIP3D/plot_GL_Stnd_MISMIP3D.py
+	deleted:    testing_and_setup/compass/landice/MISMIP3D/plot_Perturbation_MISMIP3d.py
+	deleted:    testing_and_setup/compass/landice/MISMIP3D/plot_speed_profiles.py
+	deleted:    testing_and_setup/compass/landice/MISMIP3D/setup_mismip3d_initial_conditions.py
+	deleted:    testing_and_setup/compass/landice/MISMIP3D/setup_mismip3d_perturb_domain.py
+	deleted:    testing_and_setup/compass/landice/Thwaites_variability/1km_varres_jigsaw/standard_configuration/README
+	deleted:    testing_and_setup/compass/landice/Thwaites_variability/1km_varres_jigsaw/standard_configuration/config_setup_experiments.xml
+	deleted:    testing_and_setup/compass/landice/Thwaites_variability/1km_varres_jigsaw/standard_configuration/jigsaw/generate_Thwaites_mesh.m
+	deleted:    testing_and_setup/compass/landice/Thwaites_variability/4km_varres/standard_configuration/config_driver.xml
+	deleted:    testing_and_setup/compass/landice/Thwaites_variability/4km_varres/standard_configuration/config_setup_model_step.xml
+	deleted:    testing_and_setup/compass/landice/Thwaites_variability/README
+	deleted:    testing_and_setup/compass/landice/Thwaites_variability/albany_input.xml
+	deleted:    testing_and_setup/compass/landice/Thwaites_variability/compare_variability_runs.py
+	deleted:    testing_and_setup/compass/landice/Thwaites_variability/finalize_thwaites_initial_conditions.py
+	deleted:    testing_and_setup/compass/landice/Thwaites_variability/setup_many_runs.sh
+	deleted:    testing_and_setup/compass/landice/Thwaites_variability/slurm.edison_bundle.run
+	deleted:    testing_and_setup/compass/landice/Thwaites_variability/slurm.wolf.run
+	deleted:    testing_and_setup/compass/landice/Thwaites_variability/thwaites_minimal.geojson
+	deleted:    testing_and_setup/compass/landice/Thwaites_variability/thwaites_template.xml
+	deleted:    testing_and_setup/compass/landice/Thwaites_variability/uniform_resolution/resolution_testing_configuration/config_setup_experiments.xml
+	deleted:    testing_and_setup/compass/landice/Thwaites_variability/uniform_resolution/resolution_testing_configuration/namelist.input
+	deleted:    testing_and_setup/compass/landice/Thwaites_variability/uniform_resolution/resolution_testing_configuration/namelist.input.0500m
+	deleted:    testing_and_setup/compass/landice/Thwaites_variability/uniform_resolution/resolution_testing_configuration/namelist.input.1000m
+	deleted:    testing_and_setup/compass/landice/Thwaites_variability/uniform_resolution/resolution_testing_configuration/namelist.input.2000m
+	deleted:    testing_and_setup/compass/landice/Thwaites_variability/uniform_resolution/resolution_testing_configuration/namelist.input.4000m
+	deleted:    testing_and_setup/compass/landice/Thwaites_variability/uniform_resolution/resolution_testing_configuration/namelist.input.8000m
+	deleted:    testing_and_setup/compass/landice/circular-shelf/1250m/circular-shelf_1250m_template.xml
+	deleted:    testing_and_setup/compass/landice/circular-shelf/1250m/decomposition_test/config_1proc_run_model_step.xml
+	deleted:    testing_and_setup/compass/landice/circular-shelf/1250m/decomposition_test/config_4proc_run_model_step.xml
+	deleted:    testing_and_setup/compass/landice/circular-shelf/1250m/decomposition_test/config_driver.xml
+	deleted:    testing_and_setup/compass/landice/circular-shelf/1250m/decomposition_test/config_setup_mesh_step.xml
+	deleted:    testing_and_setup/compass/landice/circular-shelf/1250m/decomposition_test/output_comparison.xml
+	deleted:    testing_and_setup/compass/landice/circular-shelf/1250m/periodic_hex.namelist.input
+	deleted:    testing_and_setup/compass/landice/circular-shelf/1250m/smoketest/config_driver.xml
+	deleted:    testing_and_setup/compass/landice/circular-shelf/1250m/smoketest/config_run_model_step.xml
+	deleted:    testing_and_setup/compass/landice/circular-shelf/1250m/smoketest/config_setup_mesh_step.xml
+	deleted:    testing_and_setup/compass/landice/circular-shelf/albany_input.xml
+	deleted:    testing_and_setup/compass/landice/circular-shelf/setup_circular_shelf_initial_conditions.py
+	deleted:    testing_and_setup/compass/landice/circular-shelf/visualize_circular_shelf.py
+	deleted:    testing_and_setup/compass/landice/confined-shelf/5000m/confined-shelf_5000m_template.xml
+	deleted:    testing_and_setup/compass/landice/confined-shelf/5000m/decomposition_test/config_1proc_run_model_step.xml
+	deleted:    testing_and_setup/compass/landice/confined-shelf/5000m/decomposition_test/config_4proc_run_model_step.xml
+	deleted:    testing_and_setup/compass/landice/confined-shelf/5000m/decomposition_test/config_driver.xml
+	deleted:    testing_and_setup/compass/landice/confined-shelf/5000m/decomposition_test/config_setup_mesh_step.xml
+	deleted:    testing_and_setup/compass/landice/confined-shelf/5000m/decomposition_test/output_comparison.xml
+	deleted:    testing_and_setup/compass/landice/confined-shelf/5000m/periodic_hex.namelist.input
+	deleted:    testing_and_setup/compass/landice/confined-shelf/5000m/smoketest/config_driver.xml
+	deleted:    testing_and_setup/compass/landice/confined-shelf/5000m/smoketest/config_run_model_step.xml
+	deleted:    testing_and_setup/compass/landice/confined-shelf/5000m/smoketest/config_setup_mesh_step.xml
+	deleted:    testing_and_setup/compass/landice/confined-shelf/albany_input.xml
+	deleted:    testing_and_setup/compass/landice/confined-shelf/setup_confined_shelf_initial_conditions.py
+	deleted:    testing_and_setup/compass/landice/confined-shelf/visualize_confined_shelf.py
+	deleted:    testing_and_setup/compass/landice/dome/2000m/decomposition_test/config_1proc_run_model_step.xml
+	deleted:    testing_and_setup/compass/landice/dome/2000m/decomposition_test/config_4proc_run_model_step.xml
+	deleted:    testing_and_setup/compass/landice/dome/2000m/decomposition_test/config_driver.xml
+	deleted:    testing_and_setup/compass/landice/dome/2000m/decomposition_test/config_setup_mesh_step.xml
+	deleted:    testing_and_setup/compass/landice/dome/2000m/decomposition_test/output_comparison.xml
+	deleted:    testing_and_setup/compass/landice/dome/2000m/dome_2000m_template.xml
+	deleted:    testing_and_setup/compass/landice/dome/2000m/halfar_analytic_test/config_driver.xml
+	deleted:    testing_and_setup/compass/landice/dome/2000m/halfar_analytic_test/config_run_model_step.xml
+	deleted:    testing_and_setup/compass/landice/dome/2000m/halfar_analytic_test/config_setup_mesh_step.xml
+	deleted:    testing_and_setup/compass/landice/dome/2000m/ho_decomposition_test/config_1proc_run_model_step.xml
+	deleted:    testing_and_setup/compass/landice/dome/2000m/ho_decomposition_test/config_4proc_run_model_step.xml
+	deleted:    testing_and_setup/compass/landice/dome/2000m/ho_decomposition_test/config_driver.xml
+	deleted:    testing_and_setup/compass/landice/dome/2000m/ho_decomposition_test/config_setup_mesh_step.xml
+	deleted:    testing_and_setup/compass/landice/dome/2000m/ho_decomposition_test/output_comparison.xml
+	deleted:    testing_and_setup/compass/landice/dome/2000m/ho_restart_test/config_driver.xml
+	deleted:    testing_and_setup/compass/landice/dome/2000m/ho_restart_test/config_full_run_step.xml
+	deleted:    testing_and_setup/compass/landice/dome/2000m/ho_restart_test/config_restart_run_step.xml
+	deleted:    testing_and_setup/compass/landice/dome/2000m/ho_restart_test/config_setup_mesh_step.xml
+	deleted:    testing_and_setup/compass/landice/dome/2000m/ho_restart_test/output_comparison.xml
+	deleted:    testing_and_setup/compass/landice/dome/2000m/ho_vs_sia_test/config_driver.xml
+	deleted:    testing_and_setup/compass/landice/dome/2000m/ho_vs_sia_test/config_ho_run_model_step.xml
+	deleted:    testing_and_setup/compass/landice/dome/2000m/ho_vs_sia_test/config_setup_mesh_step.xml
+	deleted:    testing_and_setup/compass/landice/dome/2000m/ho_vs_sia_test/config_sia_run_model_step.xml
+	deleted:    testing_and_setup/compass/landice/dome/2000m/ho_vs_sia_test/output_comparison.xml
+	deleted:    testing_and_setup/compass/landice/dome/2000m/periodic_hex.namelist.input
+	deleted:    testing_and_setup/compass/landice/dome/2000m/restart_test/config_driver.xml
+	deleted:    testing_and_setup/compass/landice/dome/2000m/restart_test/config_full_run_step.xml
+	deleted:    testing_and_setup/compass/landice/dome/2000m/restart_test/config_restart_run_step.xml
+	deleted:    testing_and_setup/compass/landice/dome/2000m/restart_test/config_setup_mesh_step.xml
+	deleted:    testing_and_setup/compass/landice/dome/2000m/restart_test/output_comparison.xml
+	deleted:    testing_and_setup/compass/landice/dome/2000m/smoketest/config_driver.xml
+	deleted:    testing_and_setup/compass/landice/dome/2000m/smoketest/config_run_model_step.xml
+	deleted:    testing_and_setup/compass/landice/dome/2000m/smoketest/config_setup_mesh_step.xml
+	deleted:    testing_and_setup/compass/landice/dome/albany_input.xml
+	deleted:    testing_and_setup/compass/landice/dome/check_halfar_solution.py
+	deleted:    testing_and_setup/compass/landice/dome/setup_dome_initial_conditions.py
+	deleted:    testing_and_setup/compass/landice/dome/variable_resolution/decomposition_test/config_1proc_run_model_step.xml
+	deleted:    testing_and_setup/compass/landice/dome/variable_resolution/decomposition_test/config_4proc_run_model_step.xml
+	deleted:    testing_and_setup/compass/landice/dome/variable_resolution/decomposition_test/config_driver.xml
+	deleted:    testing_and_setup/compass/landice/dome/variable_resolution/decomposition_test/config_setup_mesh_step.xml
+	deleted:    testing_and_setup/compass/landice/dome/variable_resolution/decomposition_test/output_comparison.xml
+	deleted:    testing_and_setup/compass/landice/dome/variable_resolution/dome_varres_template.xml
+	deleted:    testing_and_setup/compass/landice/dome/variable_resolution/halfar_analytic_test/config_driver.xml
+	deleted:    testing_and_setup/compass/landice/dome/variable_resolution/halfar_analytic_test/config_run_model_step.xml
+	deleted:    testing_and_setup/compass/landice/dome/variable_resolution/halfar_analytic_test/config_setup_mesh_step.xml
+	deleted:    testing_and_setup/compass/landice/dome/variable_resolution/ho_decomposition_test/config_1proc_run_model_step.xml
+	deleted:    testing_and_setup/compass/landice/dome/variable_resolution/ho_decomposition_test/config_4proc_run_model_step.xml
+	deleted:    testing_and_setup/compass/landice/dome/variable_resolution/ho_decomposition_test/config_driver.xml
+	deleted:    testing_and_setup/compass/landice/dome/variable_resolution/ho_decomposition_test/config_setup_mesh_step.xml
+	deleted:    testing_and_setup/compass/landice/dome/variable_resolution/ho_decomposition_test/output_comparison.xml
+	deleted:    testing_and_setup/compass/landice/dome/variable_resolution/ho_restart_test/config_driver.xml
+	deleted:    testing_and_setup/compass/landice/dome/variable_resolution/ho_restart_test/config_full_run_step.xml
+	deleted:    testing_and_setup/compass/landice/dome/variable_resolution/ho_restart_test/config_restart_run_step.xml
+	deleted:    testing_and_setup/compass/landice/dome/variable_resolution/ho_restart_test/config_setup_mesh_step.xml
+	deleted:    testing_and_setup/compass/landice/dome/variable_resolution/ho_restart_test/output_comparison.xml
+	deleted:    testing_and_setup/compass/landice/dome/variable_resolution/restart_test/config_driver.xml
+	deleted:    testing_and_setup/compass/landice/dome/variable_resolution/restart_test/config_full_run_step.xml
+	deleted:    testing_and_setup/compass/landice/dome/variable_resolution/restart_test/config_restart_run_step.xml
+	deleted:    testing_and_setup/compass/landice/dome/variable_resolution/restart_test/config_setup_mesh_step.xml
+	deleted:    testing_and_setup/compass/landice/dome/variable_resolution/restart_test/output_comparison.xml
+	deleted:    testing_and_setup/compass/landice/dome/variable_resolution/smoketest/config_driver.xml
+	deleted:    testing_and_setup/compass/landice/dome/variable_resolution/smoketest/config_run_model_step.xml
+	deleted:    testing_and_setup/compass/landice/dome/variable_resolution/smoketest/config_setup_mesh_step.xml
+	deleted:    testing_and_setup/compass/landice/dome/variable_resolution_jigsaw/generate_varres_dome_mesh.m
+	deleted:    testing_and_setup/compass/landice/dome/visualize_dome.py
+	deleted:    testing_and_setup/compass/landice/greenland/20km/decomposition_test/config_1proc_run_model_step.xml
+	deleted:    testing_and_setup/compass/landice/greenland/20km/decomposition_test/config_8proc_run_model_step.xml
+	deleted:    testing_and_setup/compass/landice/greenland/20km/decomposition_test/config_driver.xml
+	deleted:    testing_and_setup/compass/landice/greenland/20km/decomposition_test/output_comparison.xml
+	deleted:    testing_and_setup/compass/landice/greenland/20km/greenland_20km_template.xml
+	deleted:    testing_and_setup/compass/landice/greenland/20km/restart_test/config_driver.xml
+	deleted:    testing_and_setup/compass/landice/greenland/20km/restart_test/config_full_run_step.xml
+	deleted:    testing_and_setup/compass/landice/greenland/20km/restart_test/config_restart_run_step.xml
+	deleted:    testing_and_setup/compass/landice/greenland/20km/restart_test/output_comparison.xml
+	deleted:    testing_and_setup/compass/landice/greenland/20km/smoke_test/config_driver.xml
+	deleted:    testing_and_setup/compass/landice/greenland/20km/smoke_test/config_run_model_step.xml
+	deleted:    testing_and_setup/compass/landice/greenland/albany_input.xml
+	deleted:    testing_and_setup/compass/landice/hydro-radial/1000m/decomposition_test/config_1proc_run_model_step.xml
+	deleted:    testing_and_setup/compass/landice/hydro-radial/1000m/decomposition_test/config_3proc_run_model_step.xml
+	deleted:    testing_and_setup/compass/landice/hydro-radial/1000m/decomposition_test/config_driver.xml
+	deleted:    testing_and_setup/compass/landice/hydro-radial/1000m/decomposition_test/config_setup_mesh_step.xml
+	deleted:    testing_and_setup/compass/landice/hydro-radial/1000m/decomposition_test/output_comparison.xml
+	deleted:    testing_and_setup/compass/landice/hydro-radial/1000m/periodic_hex.namelist.input
+	deleted:    testing_and_setup/compass/landice/hydro-radial/1000m/restart_test/config_driver.xml
+	deleted:    testing_and_setup/compass/landice/hydro-radial/1000m/restart_test/config_full_run_step.xml
+	deleted:    testing_and_setup/compass/landice/hydro-radial/1000m/restart_test/config_restart_run_step.xml
+	deleted:    testing_and_setup/compass/landice/hydro-radial/1000m/restart_test/config_setup_mesh_step.xml
+	deleted:    testing_and_setup/compass/landice/hydro-radial/1000m/restart_test/output_comparison.xml
+	deleted:    testing_and_setup/compass/landice/hydro-radial/1000m/spinup_test/config_driver.xml
+	deleted:    testing_and_setup/compass/landice/hydro-radial/1000m/spinup_test/config_run_model_step.xml
+	deleted:    testing_and_setup/compass/landice/hydro-radial/1000m/spinup_test/config_setup_mesh_step.xml
+	deleted:    testing_and_setup/compass/landice/hydro-radial/1000m/steady_state_drift_test/config_driver.xml
+	deleted:    testing_and_setup/compass/landice/hydro-radial/1000m/steady_state_drift_test/config_run_model_step.xml
+	deleted:    testing_and_setup/compass/landice/hydro-radial/1000m/steady_state_drift_test/config_setup_mesh_step.xml
+	deleted:    testing_and_setup/compass/landice/hydro-radial/README
+	deleted:    testing_and_setup/compass/landice/hydro-radial/params.m
+	deleted:    testing_and_setup/compass/landice/hydro-radial/plot_hydro-radial_profile.py
+	deleted:    testing_and_setup/compass/landice/hydro-radial/psteady.m
+	deleted:    testing_and_setup/compass/landice/hydro-radial/radial_template.xml
+	deleted:    testing_and_setup/compass/landice/hydro-radial/radialsteady.m
+	deleted:    testing_and_setup/compass/landice/hydro-radial/setup_hydro-radial_initial_conditions.py
+	deleted:    testing_and_setup/compass/landice/hydro-radial/setup_mpas_radial_IC.m
+	deleted:    testing_and_setup/compass/landice/hydro-ramp/20000m/periodic_hex.namelist.input
+	deleted:    testing_and_setup/compass/landice/hydro-ramp/20000m/ramp_20000m_template.xml
+	deleted:    testing_and_setup/compass/landice/hydro-ramp/20000m/smoketest/config_driver.xml
+	deleted:    testing_and_setup/compass/landice/hydro-ramp/20000m/smoketest/config_run_model_step.xml
+	deleted:    testing_and_setup/compass/landice/hydro-ramp/20000m/smoketest/config_setup_mesh_step.xml
+	deleted:    testing_and_setup/compass/landice/hydro-ramp/plot_hydro-ramp_profile.py
+	deleted:    testing_and_setup/compass/landice/hydro-ramp/setup_hydro-ramp_initial_conditions.py
+	deleted:    testing_and_setup/compass/landice/hydro-shmip/convert_mpas_to_shmip.py
+	deleted:    testing_and_setup/compass/landice/hydro-shmip/standard_resolution/README
+	deleted:    testing_and_setup/compass/landice/hydro-shmip/standard_resolution/experiment_A/config_driver.xml
+	deleted:    testing_and_setup/compass/landice/hydro-shmip/standard_resolution/experiment_A/config_experiment_A1.xml
+	deleted:    testing_and_setup/compass/landice/hydro-shmip/standard_resolution/experiment_A/config_experiment_A2.xml
+	deleted:    testing_and_setup/compass/landice/hydro-shmip/standard_resolution/experiment_A/config_experiment_A3.xml
+	deleted:    testing_and_setup/compass/landice/hydro-shmip/standard_resolution/experiment_A/config_experiment_A4.xml
+	deleted:    testing_and_setup/compass/landice/hydro-shmip/standard_resolution/experiment_A/config_experiment_A5.xml
+	deleted:    testing_and_setup/compass/landice/hydro-shmip/standard_resolution/experiment_A/config_experiment_A6.xml
+	deleted:    testing_and_setup/compass/landice/hydro-shmip/standard_resolution/experiment_A/config_setup_sqrt_mesh_step.xml
+	deleted:    testing_and_setup/compass/landice/hydro-shmip/standard_resolution/experiment_A/setup_hydro-shmip_experimentA_initial_conditions.py
+	deleted:    testing_and_setup/compass/landice/hydro-shmip/standard_resolution/experiment_B/config_driver.xml
+	deleted:    testing_and_setup/compass/landice/hydro-shmip/standard_resolution/experiment_B/config_experiment_B1.xml
+	deleted:    testing_and_setup/compass/landice/hydro-shmip/standard_resolution/experiment_B/config_experiment_B2.xml
+	deleted:    testing_and_setup/compass/landice/hydro-shmip/standard_resolution/experiment_B/config_experiment_B3.xml
+	deleted:    testing_and_setup/compass/landice/hydro-shmip/standard_resolution/experiment_B/config_experiment_B4.xml
+	deleted:    testing_and_setup/compass/landice/hydro-shmip/standard_resolution/experiment_B/config_experiment_B5.xml
+	deleted:    testing_and_setup/compass/landice/hydro-shmip/standard_resolution/experiment_B/setup_hydro-shmip_experimentB_initial_conditions.py
+	deleted:    testing_and_setup/compass/landice/hydro-shmip/standard_resolution/experiment_C/config_driver.xml
+	deleted:    testing_and_setup/compass/landice/hydro-shmip/standard_resolution/experiment_C/config_experiment_C1.xml
+	deleted:    testing_and_setup/compass/landice/hydro-shmip/standard_resolution/experiment_C/config_experiment_C2.xml
+	deleted:    testing_and_setup/compass/landice/hydro-shmip/standard_resolution/experiment_C/config_experiment_C3.xml
+	deleted:    testing_and_setup/compass/landice/hydro-shmip/standard_resolution/experiment_C/config_experiment_C4.xml
+	deleted:    testing_and_setup/compass/landice/hydro-shmip/standard_resolution/experiment_C/setup_hydro-shmip_experimentC_initial_conditions.py
+	deleted:    testing_and_setup/compass/landice/hydro-shmip/standard_resolution/experiment_D/config_driver.xml
+	deleted:    testing_and_setup/compass/landice/hydro-shmip/standard_resolution/experiment_D/config_experiment_D1.xml
+	deleted:    testing_and_setup/compass/landice/hydro-shmip/standard_resolution/experiment_D/config_experiment_D2.xml
+	deleted:    testing_and_setup/compass/landice/hydro-shmip/standard_resolution/experiment_D/config_experiment_D3.xml
+	deleted:    testing_and_setup/compass/landice/hydro-shmip/standard_resolution/experiment_D/config_experiment_D4.xml
+	deleted:    testing_and_setup/compass/landice/hydro-shmip/standard_resolution/experiment_D/config_experiment_D5.xml
+	deleted:    testing_and_setup/compass/landice/hydro-shmip/standard_resolution/experiment_D/setup_hydro-shmip_experimentD_initial_conditions.py
+	deleted:    testing_and_setup/compass/landice/hydro-shmip/standard_resolution/experiment_E/config_driver.xml
+	deleted:    testing_and_setup/compass/landice/hydro-shmip/standard_resolution/experiment_E/config_experiment_E1.xml
+	deleted:    testing_and_setup/compass/landice/hydro-shmip/standard_resolution/experiment_E/config_setup_valley_mesh_step.xml
+	deleted:    testing_and_setup/compass/landice/hydro-shmip/standard_resolution/experiment_E/setup_hydro-shmip_experimentE_initial_conditions.py
+	deleted:    testing_and_setup/compass/landice/hydro-shmip/standard_resolution/periodic_hex.namelist.input.sqrt
+	deleted:    testing_and_setup/compass/landice/hydro-shmip/standard_resolution/periodic_hex.namelist.input.sqrt.1km
+	deleted:    testing_and_setup/compass/landice/hydro-shmip/standard_resolution/periodic_hex.namelist.input.sqrt.250m
+	deleted:    testing_and_setup/compass/landice/hydro-shmip/standard_resolution/periodic_hex.namelist.input.sqrt.2km
+	deleted:    testing_and_setup/compass/landice/hydro-shmip/standard_resolution/periodic_hex.namelist.input.sqrt.500m
+	deleted:    testing_and_setup/compass/landice/hydro-shmip/standard_resolution/periodic_hex.namelist.input.valley
+	deleted:    testing_and_setup/compass/landice/hydro-shmip/standard_resolution/shmip_template.xml
+	deleted:    testing_and_setup/compass/landice/hydro-shmip/visualize_output_shmip.py
+	deleted:    testing_and_setup/compass/landice/hydro-shmip/visualize_output_shmip_C.py
+	deleted:    testing_and_setup/compass/landice/hydro-shmip/visualize_output_shmip_D.py
+	deleted:    testing_and_setup/compass/landice/initMIP-AIS/bmb/Test_evolve_temp_calving_uniformBasinK_new_Use1300RestartDirectly/namelist.landice
+	deleted:    testing_and_setup/compass/landice/initMIP-AIS/bmb/Test_evolve_temp_calving_uniformBasinK_new_Use1300RestartDirectly/streams.landice
+	deleted:    testing_and_setup/compass/landice/initMIP-AIS/bmb/Test_evolve_temp_restore_calving/namelist.landice
+	deleted:    testing_and_setup/compass/landice/initMIP-AIS/bmb/Test_evolve_temp_restore_calving/streams.landice
+	deleted:    testing_and_setup/compass/landice/initMIP-AIS/build_bmb_forcing.sh
+	deleted:    testing_and_setup/compass/landice/initMIP-AIS/build_smb_forcing.sh
+	deleted:    testing_and_setup/compass/landice/initMIP-AIS/ctrl/Test_evolve_temp_calving_uniformBasinK_new_Use1300RestartDirectly/namelist.landice
+	deleted:    testing_and_setup/compass/landice/initMIP-AIS/ctrl/Test_evolve_temp_calving_uniformBasinK_new_Use1300RestartDirectly/streams.landice
+	deleted:    testing_and_setup/compass/landice/initMIP-AIS/ctrl/Test_evolve_temp_restore_calving/namelist.landice
+	deleted:    testing_and_setup/compass/landice/initMIP-AIS/ctrl/Test_evolve_temp_restore_calving/streams.landice
+	deleted:    testing_and_setup/compass/landice/initMIP-AIS/plot_globalStats.py
+	deleted:    testing_and_setup/compass/landice/initMIP-AIS/plot_regionalStats.py
+	deleted:    testing_and_setup/compass/landice/initMIP-AIS/process_xtime.py
+	deleted:    testing_and_setup/compass/landice/initMIP-AIS/spinup/calibrate_calving_parameter.py
+	deleted:    testing_and_setup/compass/landice/initMIP-AIS/spinup/plot_stats_for_paper.py
+	deleted:    testing_and_setup/compass/landice/regression_suites/ho_integration_test_suite.xml
+	deleted:    testing_and_setup/compass/landice/regression_suites/standard_integration_test_suite.xml
+	deleted:    testing_and_setup/compass/list_testcases.py
+	deleted:    testing_and_setup/compass/manage_regression_suite.py
+	deleted:    testing_and_setup/compass/ocean/baroclinic_channel/10km/baroclinic_channel_10km_template.xml
+	deleted:    testing_and_setup/compass/ocean/baroclinic_channel/10km/decomp_test/config_4proc_run.xml
+	deleted:    testing_and_setup/compass/ocean/baroclinic_channel/10km/decomp_test/config_8proc_run.xml
+	deleted:    testing_and_setup/compass/ocean/baroclinic_channel/10km/decomp_test/config_driver.xml
+	deleted:    testing_and_setup/compass/ocean/baroclinic_channel/10km/decomp_test/config_init1.xml
+	deleted:    testing_and_setup/compass/ocean/baroclinic_channel/10km/decomp_test/config_init2.xml
+	deleted:    testing_and_setup/compass/ocean/baroclinic_channel/10km/default/config_driver.xml
+	deleted:    testing_and_setup/compass/ocean/baroclinic_channel/10km/default/config_forward.xml
+	deleted:    testing_and_setup/compass/ocean/baroclinic_channel/10km/default/config_init1.xml
+	deleted:    testing_and_setup/compass/ocean/baroclinic_channel/10km/default/config_init2.xml
+	deleted:    testing_and_setup/compass/ocean/baroclinic_channel/10km/restart_test/config_driver.xml
+	deleted:    testing_and_setup/compass/ocean/baroclinic_channel/10km/restart_test/config_full_run.xml
+	deleted:    testing_and_setup/compass/ocean/baroclinic_channel/10km/restart_test/config_init1.xml
+	deleted:    testing_and_setup/compass/ocean/baroclinic_channel/10km/restart_test/config_init2.xml
+	deleted:    testing_and_setup/compass/ocean/baroclinic_channel/10km/restart_test/config_restart_run.xml
+	deleted:    testing_and_setup/compass/ocean/baroclinic_channel/10km/restart_test/restart_setup_template.xml
+	deleted:    testing_and_setup/compass/ocean/baroclinic_channel/10km/threads_test/config_4proc_run.xml
+	deleted:    testing_and_setup/compass/ocean/baroclinic_channel/10km/threads_test/config_8proc_run.xml
+	deleted:    testing_and_setup/compass/ocean/baroclinic_channel/10km/threads_test/config_driver.xml
+	deleted:    testing_and_setup/compass/ocean/baroclinic_channel/10km/threads_test/config_init1.xml
+	deleted:    testing_and_setup/compass/ocean/baroclinic_channel/10km/threads_test/config_init2.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/EC120to60/default/.gitignore
+	deleted:    testing_and_setup/compass/ocean/global_ocean/EC120to60/default/config_driver.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/EC120to60/default/config_forward.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/EC120to60/default/config_init1.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/EC120to60/default/config_init2.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/EC120to60/spin_up/.gitignore
+	deleted:    testing_and_setup/compass/ocean/global_ocean/EC120to60/spin_up/config_driver.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/EC120to60/spin_up/config_forward.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/EC120to60/spin_up/config_init1.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/EC120to60/spin_up/config_init2.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/EC120to60/spin_up/config_spin_up1.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/EC120to60/template_forward.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/EC60to30/default/.gitignore
+	deleted:    testing_and_setup/compass/ocean/global_ocean/EC60to30/default/config_driver.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/EC60to30/default/config_forward.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/EC60to30/default/config_init1.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/EC60to30/default/config_init2.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/EC60to30/five_cell/config_driver.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/EC60to30/five_cell/config_forward.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/EC60to30/five_cell/config_init1.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/EC60to30/five_cell/config_init2.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/EC60to30/five_cell/land_coverage_5_cell.geojson
+	deleted:    testing_and_setup/compass/ocean/global_ocean/EC60to30/single_cell/config_driver.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/EC60to30/single_cell/config_forward.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/EC60to30/single_cell/config_init1.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/EC60to30/single_cell/config_init2.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/EC60to30/single_cell/land_coverage_1_cell.geojson
+	deleted:    testing_and_setup/compass/ocean/global_ocean/EC60to30/spin_up/.gitignore
+	deleted:    testing_and_setup/compass/ocean/global_ocean/EC60to30/spin_up/config_driver.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/EC60to30/spin_up/config_forward.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/EC60to30/spin_up/config_init1.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/EC60to30/spin_up/config_init2.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/EC60to30/spin_up/config_spin_up1.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/EC60to30/template_forward.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/EC60to30/with_land_ice/.gitignore
+	deleted:    testing_and_setup/compass/ocean/global_ocean/EC60to30/with_land_ice/config_adjust_ssh.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/EC60to30/with_land_ice/config_driver.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/EC60to30/with_land_ice/config_forward.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/EC60to30/with_land_ice/config_init1.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/EC60to30/with_land_ice/config_init2.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/EC60to30/with_land_ice/config_init2_smoothed.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/EC60to30/with_land_ice/config_spin_up1.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/QU120/default/.gitignore
+	deleted:    testing_and_setup/compass/ocean/global_ocean/QU120/default/config_driver.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/QU120/default/config_forward.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/QU120/default/config_init1.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/QU120/default/config_init2.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/QU120/ecosys_60_layer/config_driver.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/QU120/ecosys_60_layer/config_forward.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/QU120/ecosys_60_layer/config_init1.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/QU120/ecosys_60_layer/config_init2.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/QU120/template_forward.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/QU120/with_land_ice/.gitignore
+	deleted:    testing_and_setup/compass/ocean/global_ocean/QU120/with_land_ice/config_adjust_ssh.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/QU120/with_land_ice/config_driver.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/QU120/with_land_ice/config_forward.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/QU120/with_land_ice/config_init1.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/QU120/with_land_ice/config_init2.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/QU240/analysis_test/config_driver.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/QU240/analysis_test/config_forward.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/QU240/analysis_test/config_init1.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/QU240/analysis_test/config_init2.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/QU240/default/.gitignore
+	deleted:    testing_and_setup/compass/ocean/global_ocean/QU240/default/config_driver.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/QU240/default/config_forward.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/QU240/default/config_init1.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/QU240/default/config_init2.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/QU240/performance_test/config_driver.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/QU240/performance_test/config_forward.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/QU240/performance_test/config_init1.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/QU240/performance_test/config_init2.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/QU240/restart_test/.gitignore
+	deleted:    testing_and_setup/compass/ocean/global_ocean/QU240/restart_test/config_driver.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/QU240/restart_test/config_full_run.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/QU240/restart_test/config_init1.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/QU240/restart_test/config_init2.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/QU240/restart_test/config_restart_run.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/QU240/restart_test/restart_setup_template.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/QU240/rk4_blocks_test/.gitignore
+	deleted:    testing_and_setup/compass/ocean/global_ocean/QU240/rk4_blocks_test/config_4blocks_run.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/QU240/rk4_blocks_test/config_8blocks_run.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/QU240/rk4_blocks_test/config_driver.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/QU240/rk4_blocks_test/config_init1.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/QU240/rk4_blocks_test/config_init2.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/QU240/se_blocks_test/.gitignore
+	deleted:    testing_and_setup/compass/ocean/global_ocean/QU240/se_blocks_test/config_4blocks_run.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/QU240/se_blocks_test/config_8blocks_run.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/QU240/se_blocks_test/config_driver.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/QU240/se_blocks_test/config_init1.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/QU240/se_blocks_test/config_init2.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/QU240/template_forward.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/QU240/with_land_ice/config_adjust_ssh.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/QU240/with_land_ice/config_driver.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/QU240/with_land_ice/config_forward.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/QU240/with_land_ice/config_init1.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/QU240/with_land_ice/config_init2.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/QU240/with_land_ice_no_iter/.gitignore
+	deleted:    testing_and_setup/compass/ocean/global_ocean/QU240/with_land_ice_no_iter/config_driver.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/QU240/with_land_ice_no_iter/config_forward.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/QU240/with_land_ice_no_iter/config_init1.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/QU240/with_land_ice_no_iter/config_init2.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/QU240/zstar_128_layers/config_driver.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/QU240/zstar_128_layers/config_forward.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/QU240/zstar_128_layers/config_init1.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/QU240/zstar_128_layers/config_init2.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/QU480/default/.gitignore
+	deleted:    testing_and_setup/compass/ocean/global_ocean/QU480/default/config_driver.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/QU480/default/config_forward.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/QU480/default/config_init1.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/QU480/default/config_init2.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/QU480/template_forward.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/RRS15to5/default/config_driver.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/RRS15to5/default/config_forward.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/RRS15to5/default/config_init1.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/RRS15to5/default/config_init2.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/RRS15to5/spin_up/config_driver.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/RRS15to5/spin_up/config_forward.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/RRS15to5/spin_up/config_init1.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/RRS15to5/spin_up/config_init2.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/RRS15to5/spin_up/config_spin_up1.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/RRS15to5/spin_up/config_spin_up2.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/RRS15to5/spin_up/config_spin_up3.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/RRS15to5/spin_up/config_spin_up4.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/RRS15to5/template_forward.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/RRS18to6/default/config_driver.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/RRS18to6/default/config_forward.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/RRS18to6/default/config_init1.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/RRS18to6/default/config_init2.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/RRS18to6/spin_up/config_driver.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/RRS18to6/spin_up/config_forward.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/RRS18to6/spin_up/config_init1.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/RRS18to6/spin_up/config_init2.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/RRS18to6/spin_up/config_spin_up1.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/RRS18to6/spin_up/config_spin_up2.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/RRS18to6/spin_up/config_spin_up3.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/RRS18to6/spin_up/config_spin_up4.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/RRS18to6/template_forward.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/RRS30to10/default/.gitignore
+	deleted:    testing_and_setup/compass/ocean/global_ocean/RRS30to10/default/config_driver.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/RRS30to10/default/config_forward.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/RRS30to10/default/config_init1.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/RRS30to10/default/config_init2.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/RRS30to10/spin_up/.gitignore
+	deleted:    testing_and_setup/compass/ocean/global_ocean/RRS30to10/spin_up/config_driver.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/RRS30to10/spin_up/config_forward.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/RRS30to10/spin_up/config_init1.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/RRS30to10/spin_up/config_init2.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/RRS30to10/spin_up/config_spin_up1.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/RRS30to10/spin_up/config_spin_up2.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/RRS30to10/spin_up/config_spin_up3.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/RRS30to10/spin_up/config_spin_up4.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/RRS30to10/template_forward.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/RRS30to10/with_land_ice/.gitignore
+	deleted:    testing_and_setup/compass/ocean/global_ocean/RRS30to10/with_land_ice/config_adjust_ssh.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/RRS30to10/with_land_ice/config_driver.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/RRS30to10/with_land_ice/config_forward.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/RRS30to10/with_land_ice/config_init1.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/RRS30to10/with_land_ice/config_init2.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/RRS30to10/with_land_ice/config_spin_up1.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/RRS30to10/with_land_ice/config_spin_up2.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/RRS30to10/with_land_ice/config_spin_up3.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/RRS30to10/with_land_ice/config_spin_up4.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/init_step1.py
+	deleted:    testing_and_setup/compass/ocean/global_ocean/template_adjust_ssh.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/template_critical_passages.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/template_forward.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/template_init2.xml
+	deleted:    testing_and_setup/compass/ocean/global_ocean/template_init_with_land_ice.xml
+	deleted:    testing_and_setup/compass/ocean/internal_waves/5km/default/config_driver.xml
+	deleted:    testing_and_setup/compass/ocean/internal_waves/5km/default/config_forward.xml
+	deleted:    testing_and_setup/compass/ocean/internal_waves/5km/default/config_init1.xml
+	deleted:    testing_and_setup/compass/ocean/internal_waves/5km/default/config_init2.xml
+	deleted:    testing_and_setup/compass/ocean/internal_waves/5km/internal_waves_5km_template.xml
+	deleted:    testing_and_setup/compass/ocean/internal_waves/5km/ten-day/config_driver.xml
+	deleted:    testing_and_setup/compass/ocean/internal_waves/5km/ten-day/config_forward.xml
+	deleted:    testing_and_setup/compass/ocean/internal_waves/5km/ten-day/config_init1.xml
+	deleted:    testing_and_setup/compass/ocean/internal_waves/5km/ten-day/config_init2.xml
+	deleted:    testing_and_setup/compass/ocean/isomip/10km/expt1.01/config_adjust_ssh.xml
+	deleted:    testing_and_setup/compass/ocean/isomip/10km/expt1.01/config_driver.xml
+	deleted:    testing_and_setup/compass/ocean/isomip/10km/expt1.01/config_forward.xml
+	deleted:    testing_and_setup/compass/ocean/isomip/10km/expt1.01/config_init1.xml
+	deleted:    testing_and_setup/compass/ocean/isomip/10km/expt1.01/config_init2.xml
+	deleted:    testing_and_setup/compass/ocean/isomip/10km/expt2.01/config_adjust_ssh.xml
+	deleted:    testing_and_setup/compass/ocean/isomip/10km/expt2.01/config_driver.xml
+	deleted:    testing_and_setup/compass/ocean/isomip/10km/expt2.01/config_forward.xml
+	deleted:    testing_and_setup/compass/ocean/isomip/10km/expt2.01/config_init1.xml
+	deleted:    testing_and_setup/compass/ocean/isomip/10km/expt2.01/config_init2.xml
+	deleted:    testing_and_setup/compass/ocean/isomip/template_adjust_ssh.xml
+	deleted:    testing_and_setup/compass/ocean/isomip/template_forward.xml
+	deleted:    testing_and_setup/compass/ocean/isomip/template_init.xml
+	deleted:    testing_and_setup/compass/ocean/isomip_plus/2km/Ocean0/.gitignore
+	deleted:    testing_and_setup/compass/ocean/isomip_plus/2km/Ocean0/config_adjust_ssh.xml
+	deleted:    testing_and_setup/compass/ocean/isomip_plus/2km/Ocean0/config_driver.xml
+	deleted:    testing_and_setup/compass/ocean/isomip_plus/2km/Ocean0/config_forward.xml
+	deleted:    testing_and_setup/compass/ocean/isomip_plus/2km/Ocean0/config_forward_kpp.xml
+	deleted:    testing_and_setup/compass/ocean/isomip_plus/2km/Ocean0/config_forward_short.xml
+	deleted:    testing_and_setup/compass/ocean/isomip_plus/2km/Ocean0/config_forward_unforced.xml
+	deleted:    testing_and_setup/compass/ocean/isomip_plus/2km/Ocean0/config_init1.xml
+	deleted:    testing_and_setup/compass/ocean/isomip_plus/2km/Ocean0/config_init2.xml
+	deleted:    testing_and_setup/compass/ocean/isomip_plus/2km/Ocean1/config_adjust_ssh.xml
+	deleted:    testing_and_setup/compass/ocean/isomip_plus/2km/Ocean1/config_driver.xml
+	deleted:    testing_and_setup/compass/ocean/isomip_plus/2km/Ocean1/config_forward.xml
+	deleted:    testing_and_setup/compass/ocean/isomip_plus/2km/Ocean1/config_forward_kpp.xml
+	deleted:    testing_and_setup/compass/ocean/isomip_plus/2km/Ocean1/config_forward_short.xml
+	deleted:    testing_and_setup/compass/ocean/isomip_plus/2km/Ocean1/config_init1.xml
+	deleted:    testing_and_setup/compass/ocean/isomip_plus/2km/Ocean1/config_init2.xml
+	deleted:    testing_and_setup/compass/ocean/isomip_plus/2km/Ocean2/config_adjust_ssh.xml
+	deleted:    testing_and_setup/compass/ocean/isomip_plus/2km/Ocean2/config_driver.xml
+	deleted:    testing_and_setup/compass/ocean/isomip_plus/2km/Ocean2/config_forward.xml
+	deleted:    testing_and_setup/compass/ocean/isomip_plus/2km/Ocean2/config_forward_kpp.xml
+	deleted:    testing_and_setup/compass/ocean/isomip_plus/2km/Ocean2/config_forward_short.xml
+	deleted:    testing_and_setup/compass/ocean/isomip_plus/2km/Ocean2/config_init1.xml
+	deleted:    testing_and_setup/compass/ocean/isomip_plus/2km/Ocean2/config_init2.xml
+	deleted:    testing_and_setup/compass/ocean/isomip_plus/5km/Ocean0/.gitignore
+	deleted:    testing_and_setup/compass/ocean/isomip_plus/5km/Ocean0/config_adjust_ssh.xml
+	deleted:    testing_and_setup/compass/ocean/isomip_plus/5km/Ocean0/config_driver.xml
+	deleted:    testing_and_setup/compass/ocean/isomip_plus/5km/Ocean0/config_forward.xml
+	deleted:    testing_and_setup/compass/ocean/isomip_plus/5km/Ocean0/config_init1.xml
+	deleted:    testing_and_setup/compass/ocean/isomip_plus/5km/Ocean0/config_init2.xml
+	deleted:    testing_and_setup/compass/ocean/isomip_plus/5km/Ocean1/config_adjust_ssh.xml
+	deleted:    testing_and_setup/compass/ocean/isomip_plus/5km/Ocean1/config_driver.xml
+	deleted:    testing_and_setup/compass/ocean/isomip_plus/5km/Ocean1/config_forward.xml
+	deleted:    testing_and_setup/compass/ocean/isomip_plus/5km/Ocean1/config_init1.xml
+	deleted:    testing_and_setup/compass/ocean/isomip_plus/5km/Ocean1/config_init2.xml
+	deleted:    testing_and_setup/compass/ocean/isomip_plus/5km/Ocean2/config_adjust_ssh.xml
+	deleted:    testing_and_setup/compass/ocean/isomip_plus/5km/Ocean2/config_driver.xml
+	deleted:    testing_and_setup/compass/ocean/isomip_plus/5km/Ocean2/config_forward.xml
+	deleted:    testing_and_setup/compass/ocean/isomip_plus/5km/Ocean2/config_init1.xml
+	deleted:    testing_and_setup/compass/ocean/isomip_plus/5km/Ocean2/config_init2.xml
+	deleted:    testing_and_setup/compass/ocean/isomip_plus/5km/template_forward.xml
+	deleted:    testing_and_setup/compass/ocean/isomip_plus/processInputGeometry.py
+	deleted:    testing_and_setup/compass/ocean/isomip_plus/setup_Ocean0_param_study.py
+	deleted:    testing_and_setup/compass/ocean/isomip_plus/template_Ocean0_param_study.xml
+	deleted:    testing_and_setup/compass/ocean/isomip_plus/template_adjust_ssh.xml
+	deleted:    testing_and_setup/compass/ocean/isomip_plus/template_forward.xml
+	deleted:    testing_and_setup/compass/ocean/isomip_plus/template_init.xml
+	deleted:    testing_and_setup/compass/ocean/isomip_plus/update_evaporationFlux.py
+	deleted:    testing_and_setup/compass/ocean/isomip_plus/viz/computeAndPlotResults.py
+	deleted:    testing_and_setup/compass/ocean/isomip_plus/viz/computeBarotropicStreamfunction.py
+	deleted:    testing_and_setup/compass/ocean/isomip_plus/viz/computeMISOMIPInterpCoeffs.py
+	deleted:    testing_and_setup/compass/ocean/isomip_plus/viz/computeOverturningStreamfunction.py
+	deleted:    testing_and_setup/compass/ocean/isomip_plus/viz/interpMISOMIPResults.py
+	deleted:    testing_and_setup/compass/ocean/isomip_plus/viz/plotMeltFluxes.py
+	deleted:    testing_and_setup/compass/ocean/isomip_plus/viz/plotResults.py
+	deleted:    testing_and_setup/compass/ocean/iterative_ssh_landIcePressure_scripts/iterate_init.py
+	deleted:    testing_and_setup/compass/ocean/iterative_ssh_landIcePressure_scripts/plot_cart_ssh_landIcePressure.py
+	deleted:    testing_and_setup/compass/ocean/lock_exchange/0.5km/default/config_driver.xml
+	deleted:    testing_and_setup/compass/ocean/lock_exchange/0.5km/default/config_forward.xml
+	deleted:    testing_and_setup/compass/ocean/lock_exchange/0.5km/default/config_init1.xml
+	deleted:    testing_and_setup/compass/ocean/lock_exchange/0.5km/default/config_init2.xml
+	deleted:    testing_and_setup/compass/ocean/lock_exchange/16km/default/config_driver.xml
+	deleted:    testing_and_setup/compass/ocean/lock_exchange/16km/default/config_forward.xml
+	deleted:    testing_and_setup/compass/ocean/lock_exchange/16km/default/config_init1.xml
+	deleted:    testing_and_setup/compass/ocean/lock_exchange/16km/default/config_init2.xml
+	deleted:    testing_and_setup/compass/ocean/overflow/10km/default/.gitignore
+	deleted:    testing_and_setup/compass/ocean/overflow/10km/default/config_driver.xml
+	deleted:    testing_and_setup/compass/ocean/overflow/10km/default/config_forward.xml
+	deleted:    testing_and_setup/compass/ocean/overflow/10km/default/config_init1.xml
+	deleted:    testing_and_setup/compass/ocean/overflow/10km/default/config_init2.xml
+	deleted:    testing_and_setup/compass/ocean/periodic_planar/20km/default_light/config_driver.xml
+	deleted:    testing_and_setup/compass/ocean/periodic_planar/20km/default_light/config_forward.xml
+	deleted:    testing_and_setup/compass/ocean/periodic_planar/20km/default_light/config_init1.xml
+	deleted:    testing_and_setup/compass/ocean/periodic_planar/20km/default_light/config_init2.xml
+	deleted:    testing_and_setup/compass/ocean/periodic_planar/20km/region_reset_light_test/config_driver.xml
+	deleted:    testing_and_setup/compass/ocean/periodic_planar/20km/region_reset_light_test/config_forward.xml
+	deleted:    testing_and_setup/compass/ocean/periodic_planar/20km/region_reset_light_test/config_init1.xml
+	deleted:    testing_and_setup/compass/ocean/periodic_planar/20km/region_reset_light_test/config_init2.xml
+	deleted:    testing_and_setup/compass/ocean/periodic_planar/20km/time_reset_light_test/config_driver.xml
+	deleted:    testing_and_setup/compass/ocean/periodic_planar/20km/time_reset_light_test/config_forward.xml
+	deleted:    testing_and_setup/compass/ocean/periodic_planar/20km/time_reset_light_test/config_init1.xml
+	deleted:    testing_and_setup/compass/ocean/periodic_planar/20km/time_reset_light_test/config_init2.xml
+	deleted:    testing_and_setup/compass/ocean/regression_suites/land_ice_fluxes.xml
+	deleted:    testing_and_setup/compass/ocean/regression_suites/light.xml
+	deleted:    testing_and_setup/compass/ocean/regression_suites/nightly.xml
+	deleted:    testing_and_setup/compass/ocean/scripts/plot_globalStats.py
+	deleted:    testing_and_setup/compass/ocean/sea_mount/6.7km/.gitignore
+	deleted:    testing_and_setup/compass/ocean/sea_mount/6.7km/default/config_driver.xml
+	deleted:    testing_and_setup/compass/ocean/sea_mount/6.7km/default/config_forward.xml
+	deleted:    testing_and_setup/compass/ocean/sea_mount/6.7km/default/config_init1.xml
+	deleted:    testing_and_setup/compass/ocean/sea_mount/6.7km/default/config_init2.xml
+	deleted:    testing_and_setup/compass/ocean/sea_mount/6.7km/template_forward.xml
+	deleted:    testing_and_setup/compass/ocean/single_column_model/planar/cvmix_test/config_driver.xml
+	deleted:    testing_and_setup/compass/ocean/single_column_model/planar/cvmix_test/config_forward.xml
+	deleted:    testing_and_setup/compass/ocean/single_column_model/planar/cvmix_test/config_init.xml
+	deleted:    testing_and_setup/compass/ocean/single_column_model/sphere/cvmix_test/config_driver.xml
+	deleted:    testing_and_setup/compass/ocean/single_column_model/sphere/cvmix_test/config_forward.xml
+	deleted:    testing_and_setup/compass/ocean/single_column_model/sphere/cvmix_test/config_init.xml
+	deleted:    testing_and_setup/compass/ocean/soma/16km/3layer/config_driver.xml
+	deleted:    testing_and_setup/compass/ocean/soma/16km/3layer/config_forward.xml
+	deleted:    testing_and_setup/compass/ocean/soma/16km/3layer/config_init1.xml
+	deleted:    testing_and_setup/compass/ocean/soma/16km/3layer/config_init2.xml
+	deleted:    testing_and_setup/compass/ocean/soma/16km/default/config_driver.xml
+	deleted:    testing_and_setup/compass/ocean/soma/16km/default/config_forward.xml
+	deleted:    testing_and_setup/compass/ocean/soma/16km/default/config_init1.xml
+	deleted:    testing_and_setup/compass/ocean/soma/16km/default/config_init2.xml
+	deleted:    testing_and_setup/compass/ocean/soma/16km/surface_restoring/config_driver.xml
+	deleted:    testing_and_setup/compass/ocean/soma/16km/surface_restoring/config_forward.xml
+	deleted:    testing_and_setup/compass/ocean/soma/16km/surface_restoring/config_init1.xml
+	deleted:    testing_and_setup/compass/ocean/soma/16km/surface_restoring/config_init2.xml
+	deleted:    testing_and_setup/compass/ocean/soma/32km/3layer/config_driver.xml
+	deleted:    testing_and_setup/compass/ocean/soma/32km/3layer/config_forward.xml
+	deleted:    testing_and_setup/compass/ocean/soma/32km/3layer/config_init1.xml
+	deleted:    testing_and_setup/compass/ocean/soma/32km/3layer/config_init2.xml
+	deleted:    testing_and_setup/compass/ocean/soma/32km/default/config_driver.xml
+	deleted:    testing_and_setup/compass/ocean/soma/32km/default/config_forward.xml
+	deleted:    testing_and_setup/compass/ocean/soma/32km/default/config_init1.xml
+	deleted:    testing_and_setup/compass/ocean/soma/32km/default/config_init2.xml
+	deleted:    testing_and_setup/compass/ocean/soma/32km/surface_restoring/config_driver.xml
+	deleted:    testing_and_setup/compass/ocean/soma/32km/surface_restoring/config_forward.xml
+	deleted:    testing_and_setup/compass/ocean/soma/32km/surface_restoring/config_init1.xml
+	deleted:    testing_and_setup/compass/ocean/soma/32km/surface_restoring/config_init2.xml
+	deleted:    testing_and_setup/compass/ocean/soma/4km/32to4km/config_driver.xml
+	deleted:    testing_and_setup/compass/ocean/soma/4km/32to4km/config_forward.xml
+	deleted:    testing_and_setup/compass/ocean/soma/4km/32to4km/config_init1.xml
+	deleted:    testing_and_setup/compass/ocean/soma/4km/32to4km/config_init2.xml
+	deleted:    testing_and_setup/compass/ocean/soma/4km/3layer/config_driver.xml
+	deleted:    testing_and_setup/compass/ocean/soma/4km/3layer/config_forward.xml
+	deleted:    testing_and_setup/compass/ocean/soma/4km/3layer/config_init1.xml
+	deleted:    testing_and_setup/compass/ocean/soma/4km/3layer/config_init2.xml
+	deleted:    testing_and_setup/compass/ocean/soma/4km/default/config_driver.xml
+	deleted:    testing_and_setup/compass/ocean/soma/4km/default/config_forward.xml
+	deleted:    testing_and_setup/compass/ocean/soma/4km/default/config_init1.xml
+	deleted:    testing_and_setup/compass/ocean/soma/4km/default/config_init2.xml
+	deleted:    testing_and_setup/compass/ocean/soma/4km/surface_restoring/config_driver.xml
+	deleted:    testing_and_setup/compass/ocean/soma/4km/surface_restoring/config_forward.xml
+	deleted:    testing_and_setup/compass/ocean/soma/4km/surface_restoring/config_init1.xml
+	deleted:    testing_and_setup/compass/ocean/soma/4km/surface_restoring/config_init2.xml
+	deleted:    testing_and_setup/compass/ocean/soma/8km/32to8km/config_driver.xml
+	deleted:    testing_and_setup/compass/ocean/soma/8km/32to8km/config_forward.xml
+	deleted:    testing_and_setup/compass/ocean/soma/8km/32to8km/config_init1.xml
+	deleted:    testing_and_setup/compass/ocean/soma/8km/32to8km/config_init2.xml
+	deleted:    testing_and_setup/compass/ocean/soma/8km/3layer/config_driver.xml
+	deleted:    testing_and_setup/compass/ocean/soma/8km/3layer/config_forward.xml
+	deleted:    testing_and_setup/compass/ocean/soma/8km/3layer/config_init1.xml
+	deleted:    testing_and_setup/compass/ocean/soma/8km/3layer/config_init2.xml
+	deleted:    testing_and_setup/compass/ocean/soma/8km/default/config_driver.xml
+	deleted:    testing_and_setup/compass/ocean/soma/8km/default/config_forward.xml
+	deleted:    testing_and_setup/compass/ocean/soma/8km/default/config_init1.xml
+	deleted:    testing_and_setup/compass/ocean/soma/8km/default/config_init2.xml
+	deleted:    testing_and_setup/compass/ocean/soma/8km/surface_restoring/config_driver.xml
+	deleted:    testing_and_setup/compass/ocean/soma/8km/surface_restoring/config_forward.xml
+	deleted:    testing_and_setup/compass/ocean/soma/8km/surface_restoring/config_init1.xml
+	deleted:    testing_and_setup/compass/ocean/soma/8km/surface_restoring/config_init2.xml
+	deleted:    testing_and_setup/compass/ocean/soma/soma_analysis_members.xml
+	deleted:    testing_and_setup/compass/ocean/soma/soma_run.xml
+	deleted:    testing_and_setup/compass/ocean/soma/soma_template.xml
+	deleted:    testing_and_setup/compass/ocean/sub_ice_shelf_2D/5km/.gitignore
+	deleted:    testing_and_setup/compass/ocean/sub_ice_shelf_2D/5km/Haney_number_init/config_driver.xml
+	deleted:    testing_and_setup/compass/ocean/sub_ice_shelf_2D/5km/Haney_number_init/config_forward.xml
+	deleted:    testing_and_setup/compass/ocean/sub_ice_shelf_2D/5km/Haney_number_init/config_init1.xml
+	deleted:    testing_and_setup/compass/ocean/sub_ice_shelf_2D/5km/Haney_number_init/config_init2.xml
+	deleted:    testing_and_setup/compass/ocean/sub_ice_shelf_2D/5km/Haney_number_iterative_init/config_adjust_ssh.xml
+	deleted:    testing_and_setup/compass/ocean/sub_ice_shelf_2D/5km/Haney_number_iterative_init/config_driver.xml
+	deleted:    testing_and_setup/compass/ocean/sub_ice_shelf_2D/5km/Haney_number_iterative_init/config_forward.xml
+	deleted:    testing_and_setup/compass/ocean/sub_ice_shelf_2D/5km/Haney_number_iterative_init/config_init1.xml
+	deleted:    testing_and_setup/compass/ocean/sub_ice_shelf_2D/5km/Haney_number_iterative_init/config_init2.xml
+	deleted:    testing_and_setup/compass/ocean/sub_ice_shelf_2D/5km/default/config_driver.xml
+	deleted:    testing_and_setup/compass/ocean/sub_ice_shelf_2D/5km/default/config_forward.xml
+	deleted:    testing_and_setup/compass/ocean/sub_ice_shelf_2D/5km/default/config_init1.xml
+	deleted:    testing_and_setup/compass/ocean/sub_ice_shelf_2D/5km/default/config_init2.xml
+	deleted:    testing_and_setup/compass/ocean/sub_ice_shelf_2D/5km/iterative_init/config_adjust_ssh.xml
+	deleted:    testing_and_setup/compass/ocean/sub_ice_shelf_2D/5km/iterative_init/config_driver.xml
+	deleted:    testing_and_setup/compass/ocean/sub_ice_shelf_2D/5km/iterative_init/config_forward.xml
+	deleted:    testing_and_setup/compass/ocean/sub_ice_shelf_2D/5km/iterative_init/config_init1.xml
+	deleted:    testing_and_setup/compass/ocean/sub_ice_shelf_2D/5km/iterative_init/config_init2.xml
+	deleted:    testing_and_setup/compass/ocean/sub_ice_shelf_2D/5km/restart_test/config_adjust_ssh.xml
+	deleted:    testing_and_setup/compass/ocean/sub_ice_shelf_2D/5km/restart_test/config_driver.xml
+	deleted:    testing_and_setup/compass/ocean/sub_ice_shelf_2D/5km/restart_test/config_full_run.xml
+	deleted:    testing_and_setup/compass/ocean/sub_ice_shelf_2D/5km/restart_test/config_init1.xml
+	deleted:    testing_and_setup/compass/ocean/sub_ice_shelf_2D/5km/restart_test/config_init2.xml
+	deleted:    testing_and_setup/compass/ocean/sub_ice_shelf_2D/5km/restart_test/config_restart_run.xml
+	deleted:    testing_and_setup/compass/ocean/sub_ice_shelf_2D/5km/restart_test/restart_setup_template.xml
+	deleted:    testing_and_setup/compass/ocean/sub_ice_shelf_2D/5km/template_adjust_ssh.xml
+	deleted:    testing_and_setup/compass/ocean/sub_ice_shelf_2D/5km/template_forward.xml
+	deleted:    testing_and_setup/compass/ocean/sub_ice_shelf_2D/5km/template_init.xml
+	deleted:    testing_and_setup/compass/ocean/sub_ice_shelf_2D/5km/with_frazil/config_adjust_ssh.xml
+	deleted:    testing_and_setup/compass/ocean/sub_ice_shelf_2D/5km/with_frazil/config_driver.xml
+	deleted:    testing_and_setup/compass/ocean/sub_ice_shelf_2D/5km/with_frazil/config_forward.xml
+	deleted:    testing_and_setup/compass/ocean/sub_ice_shelf_2D/5km/with_frazil/config_init1.xml
+	deleted:    testing_and_setup/compass/ocean/sub_ice_shelf_2D/5km/with_frazil/config_init2.xml
+	deleted:    testing_and_setup/compass/ocean/templates/analysis_members/debug_diagnostics.xml
+	deleted:    testing_and_setup/compass/ocean/templates/analysis_members/eddy_product_variables.xml
+	deleted:    testing_and_setup/compass/ocean/templates/analysis_members/eliassen_palm.xml
+	deleted:    testing_and_setup/compass/ocean/templates/analysis_members/global_stats.xml
+	deleted:    testing_and_setup/compass/ocean/templates/analysis_members/global_stats_text_only.xml
+	deleted:    testing_and_setup/compass/ocean/templates/analysis_members/high_frequency_output.xml
+	deleted:    testing_and_setup/compass/ocean/templates/analysis_members/lagrangian_particle_tracking.xml
+	deleted:    testing_and_setup/compass/ocean/templates/analysis_members/layer_volume_weighted_averages.xml
+	deleted:    testing_and_setup/compass/ocean/templates/analysis_members/meridional_heat_transport.xml
+	deleted:    testing_and_setup/compass/ocean/templates/analysis_members/mixed_layer_depths.xml
+	deleted:    testing_and_setup/compass/ocean/templates/analysis_members/okubo_weiss.xml
+	deleted:    testing_and_setup/compass/ocean/templates/analysis_members/surface_area_weighted_averages.xml
+	deleted:    testing_and_setup/compass/ocean/templates/analysis_members/test_compute_interval.xml
+	deleted:    testing_and_setup/compass/ocean/templates/analysis_members/time_filters.xml
+	deleted:    testing_and_setup/compass/ocean/templates/analysis_members/time_series_stats.xml
+	deleted:    testing_and_setup/compass/ocean/templates/analysis_members/water_mass_census.xml
+	deleted:    testing_and_setup/compass/ocean/templates/analysis_members/zonal_mean.xml
+	deleted:    testing_and_setup/compass/ocean/templates/debugging.xml
+	deleted:    testing_and_setup/compass/ocean/templates/streams/KPP_testing.xml
+	deleted:    testing_and_setup/compass/ocean/templates/streams/forcing_data.xml
+	deleted:    testing_and_setup/compass/ocean/templates/streams/frazil.xml
+	deleted:    testing_and_setup/compass/ocean/templates/streams/land_ice_fluxes.xml
+	deleted:    testing_and_setup/compass/ocean/templates/streams/minimal_output.xml
+	deleted:    testing_and_setup/compass/ocean/templates/streams/output.xml
+	deleted:    testing_and_setup/compass/ocean/templates/streams/shortwave_forcing_data.xml
+	deleted:    testing_and_setup/compass/ocean/templates/validations/LIGHT_comparison.xml
+	deleted:    testing_and_setup/compass/ocean/templates/validations/LIGHT_timers.xml
+	deleted:    testing_and_setup/compass/ocean/templates/validations/ecosys_comparison.xml
+	deleted:    testing_and_setup/compass/ocean/templates/validations/frazil_comparison.xml
+	deleted:    testing_and_setup/compass/ocean/templates/validations/land_ice_flux_comparison.xml
+	deleted:    testing_and_setup/compass/ocean/templates/validations/prognostic_comparison.xml
+	deleted:    testing_and_setup/compass/ocean/ziso/10km/default/config_driver.xml
+	deleted:    testing_and_setup/compass/ocean/ziso/10km/default/config_forward.xml
+	deleted:    testing_and_setup/compass/ocean/ziso/10km/default/config_init1.xml
+	deleted:    testing_and_setup/compass/ocean/ziso/10km/default/config_init2.xml
+	deleted:    testing_and_setup/compass/ocean/ziso/2.5km/default/config_driver.xml
+	deleted:    testing_and_setup/compass/ocean/ziso/2.5km/default/config_forward.xml
+	deleted:    testing_and_setup/compass/ocean/ziso/2.5km/default/config_init1.xml
+	deleted:    testing_and_setup/compass/ocean/ziso/2.5km/default/config_init2.xml
+	deleted:    testing_and_setup/compass/ocean/ziso/20km/default/config_driver.xml
+	deleted:    testing_and_setup/compass/ocean/ziso/20km/default/config_forward.xml
+	deleted:    testing_and_setup/compass/ocean/ziso/20km/default/config_init1.xml
+	deleted:    testing_and_setup/compass/ocean/ziso/20km/default/config_init2.xml
+	deleted:    testing_and_setup/compass/ocean/ziso/20km/with_frazil/config_driver.xml
+	deleted:    testing_and_setup/compass/ocean/ziso/20km/with_frazil/config_forward.xml
+	deleted:    testing_and_setup/compass/ocean/ziso/20km/with_frazil/config_init1.xml
+	deleted:    testing_and_setup/compass/ocean/ziso/20km/with_frazil/config_init2.xml
+	deleted:    testing_and_setup/compass/ocean/ziso/5km/default/config_driver.xml
+	deleted:    testing_and_setup/compass/ocean/ziso/5km/default/config_forward.xml
+	deleted:    testing_and_setup/compass/ocean/ziso/5km/default/config_init1.xml
+	deleted:    testing_and_setup/compass/ocean/ziso/5km/default/config_init2.xml
+	deleted:    testing_and_setup/compass/ocean/ziso/ziso_analysis_members.xml
+	deleted:    testing_and_setup/compass/ocean/ziso/ziso_run.xml
+	deleted:    testing_and_setup/compass/ocean/ziso/ziso_template.xml
+	deleted:    testing_and_setup/compass/runtime_definitions/mpirun.xml
+	deleted:    testing_and_setup/compass/runtime_definitions/srun.xml
+	deleted:    testing_and_setup/compass/setup_testcase.py
+	deleted:    testing_and_setup/compass/test/basic_spherical/960km/.gitignore
+	deleted:    testing_and_setup/compass/test/basic_spherical/960km/default/config_driver.xml
+	deleted:    testing_and_setup/compass/test/basic_spherical/960km/default/config_test.xml
+	deleted:    testing_and_setup/compass/test/example_regression_suite.xml
+	deleted:    testing_and_setup/compass/utility_scripts/check_progress.py
+	deleted:    testing_and_setup/compass/utility_scripts/compare_fields.py
+	deleted:    testing_and_setup/compass/utility_scripts/compare_timers.py
+	modified:   testing_and_setup/compass/utility_scripts/make_graph_file.py
+	deleted:    testing_and_setup/compass/utility_scripts/make_parameter_study_configs.py
+	deleted:    testing_and_setup/compass/utility_scripts/setup_restart.py
+	deleted:    testing_and_setup/seaice/configurations/standard_bgc/namelist.seaice
+	deleted:    testing_and_setup/seaice/configurations/standard_bgc/streams.seaice
+	deleted:    testing_and_setup/seaice/configurations/standard_physics/README
+	deleted:    testing_and_setup/seaice/configurations/standard_physics/namelist.seaice
+	deleted:    testing_and_setup/seaice/configurations/standard_physics/streams.seaice
+	deleted:    testing_and_setup/seaice/configurations/standard_physics_single_cell/namelist.seaice
+	deleted:    testing_and_setup/seaice/configurations/standard_physics_single_cell/streams.seaice
+	deleted:    testing_and_setup/seaice/testing/.gitignore
+	deleted:    testing_and_setup/seaice/testing/README
+	deleted:    testing_and_setup/seaice/testing/compare_mpas_files.py
+	deleted:    testing_and_setup/seaice/testing/test_mpas-seaice.py
+	deleted:    testing_and_setup/seaice/testing/testing_utils.py
+	deleted:    testing_and_setup/seaice/testing/tests/parallelism.py
+	deleted:    testing_and_setup/seaice/testing/tests/regression.py
+	deleted:    testing_and_setup/seaice/testing/tests/restartability.py
+	deleted:    testing_and_setup/seaice/testing/testsuites/testsuite.standard.xml
+	deleted:    testing_and_setup/seaice/testing/testsuites/testsuite.standard_bgc.xml
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	1
+	ocean_model
+	src/1
+	src/core_ocean/.BGC_all/
+	src/core_ocean/.cvmix_all/
+	src/core_ocean/BGC
+	src/core_ocean/Registry_processed.xml
+	src/core_ocean/analysis_members/mpas_ocn_analysis_driver.o
+	src/core_ocean/analysis_members/mpas_ocn_debug_diagnostics.o
+	src/core_ocean/analysis_members/mpas_ocn_eddy_product_variables.o
+	src/core_ocean/analysis_members/mpas_ocn_eliassen_palm.o
+	src/core_ocean/analysis_members/mpas_ocn_global_stats.o
+	src/core_ocean/analysis_members/mpas_ocn_high_frequency_output.o
+	src/core_ocean/analysis_members/mpas_ocn_lagrangian_particle_tracking.o
+	src/core_ocean/analysis_members/mpas_ocn_lagrangian_particle_tracking_interpolations.o
+	src/core_ocean/analysis_members/mpas_ocn_lagrangian_particle_tracking_reset.o
+	src/core_ocean/analysis_members/mpas_ocn_layer_volume_weighted_averages.o
+	src/core_ocean/analysis_members/mpas_ocn_meridional_heat_transport.o
+	src/core_ocean/analysis_members/mpas_ocn_mixed_layer_depths.o
+	src/core_ocean/analysis_members/mpas_ocn_moc_streamfunction.o
+	src/core_ocean/analysis_members/mpas_ocn_okubo_weiss.o
+	src/core_ocean/analysis_members/mpas_ocn_okubo_weiss_eigenvalues.o
+	src/core_ocean/analysis_members/mpas_ocn_particle_list.o
+	src/core_ocean/analysis_members/mpas_ocn_pointwise_stats.o
+	src/core_ocean/analysis_members/mpas_ocn_regional_stats.o
+	src/core_ocean/analysis_members/mpas_ocn_rpn_calculator.o
+	src/core_ocean/analysis_members/mpas_ocn_surface_area_weighted_averages.o
+	src/core_ocean/analysis_members/mpas_ocn_test_compute_interval.o
+	src/core_ocean/analysis_members/mpas_ocn_time_filters.o
+	src/core_ocean/analysis_members/mpas_ocn_time_series_stats.o
+	src/core_ocean/analysis_members/mpas_ocn_transect_transport.o
+	src/core_ocean/analysis_members/mpas_ocn_water_mass_census.o
+	src/core_ocean/analysis_members/mpas_ocn_zonal_mean.o
+	src/core_ocean/analysis_members/ocn_analysis_driver.mod
+	src/core_ocean/analysis_members/ocn_debug_diagnostics.mod
+	src/core_ocean/analysis_members/ocn_eddy_product_variables.mod
+	src/core_ocean/analysis_members/ocn_eliassen_palm.mod
+	src/core_ocean/analysis_members/ocn_global_stats.mod
+	src/core_ocean/analysis_members/ocn_high_frequency_output.mod
+	src/core_ocean/analysis_members/ocn_lagrangian_particle_tracking.mod
+	src/core_ocean/analysis_members/ocn_lagrangian_particle_tracking_interpolations.mod
+	src/core_ocean/analysis_members/ocn_lagrangian_particle_tracking_reset.mod
+	src/core_ocean/analysis_members/ocn_layer_volume_weighted_averages.mod
+	src/core_ocean/analysis_members/ocn_meridional_heat_transport.mod
+	src/core_ocean/analysis_members/ocn_mixed_layer_depths.mod
+	src/core_ocean/analysis_members/ocn_moc_streamfunction.mod
+	src/core_ocean/analysis_members/ocn_okubo_weiss.mod
+	src/core_ocean/analysis_members/ocn_particle_list.mod
+	src/core_ocean/analysis_members/ocn_pointwise_stats.mod
+	src/core_ocean/analysis_members/ocn_regional_stats.mod
+	src/core_ocean/analysis_members/ocn_rpn_calculator.mod
+	src/core_ocean/analysis_members/ocn_surface_area_weighted_averages.mod
+	src/core_ocean/analysis_members/ocn_test_compute_interval.mod
+	src/core_ocean/analysis_members/ocn_time_filters.mod
+	src/core_ocean/analysis_members/ocn_time_series_stats.mod
+	src/core_ocean/analysis_members/ocn_transect_transport.mod
+	src/core_ocean/analysis_members/ocn_water_mass_census.mod
+	src/core_ocean/analysis_members/ocn_zonal_mean.mod
+	src/core_ocean/cvmix
+	src/core_ocean/default_inputs/
+	src/core_ocean/driver/mpas_ocn_core.o
+	src/core_ocean/driver/mpas_ocn_core_interface.o
+	src/core_ocean/driver/ocn_core.mod
+	src/core_ocean/driver/ocn_core_interface.mod
+	src/core_ocean/inc/
+	src/core_ocean/libdycore.a
+	src/core_ocean/mode_analysis/mpas_ocn_analysis_mode.o
+	src/core_ocean/mode_analysis/ocn_analysis_mode.mod
+	src/core_ocean/mode_forward/mpas_ocn_forward_mode.o
+	src/core_ocean/mode_forward/mpas_ocn_time_integration.o
+	src/core_ocean/mode_forward/mpas_ocn_time_integration_rk4.o
+	src/core_ocean/mode_forward/mpas_ocn_time_integration_sfwd.o
+	src/core_ocean/mode_forward/mpas_ocn_time_integration_si.o
+	src/core_ocean/mode_forward/mpas_ocn_time_integration_si_clean.F
+	src/core_ocean/mode_forward/mpas_ocn_time_integration_split.o
+	src/core_ocean/mode_forward/ocn_forward_mode.mod
+	src/core_ocean/mode_forward/ocn_time_integration.mod
+	src/core_ocean/mode_forward/ocn_time_integration_rk4.mod
+	src/core_ocean/mode_forward/ocn_time_integration_sfwd.mod
+	src/core_ocean/mode_forward/ocn_time_integration_si.mod
+	src/core_ocean/mode_forward/ocn_time_integration_split.mod
+	src/core_ocean/mode_forward/sw_time.F
+	src/core_ocean/mode_forward/temp.F
+	src/core_ocean/mode_forward/temp2.F
+	src/core_ocean/mode_forward/test.F
+	src/core_ocean/mode_forward/test2.F
+	src/core_ocean/mode_forward/test3.F
+	src/core_ocean/mode_init/mpas_ocn_init_baroclinic_channel.o
+	src/core_ocean/mode_init/mpas_ocn_init_cell_markers.o
+	src/core_ocean/mode_init/mpas_ocn_init_cvmix_WSwSBF.o
+	src/core_ocean/mode_init/mpas_ocn_init_ecosys_column.o
+	src/core_ocean/mode_init/mpas_ocn_init_global_ocean.o
+	src/core_ocean/mode_init/mpas_ocn_init_internal_waves.o
+	src/core_ocean/mode_init/mpas_ocn_init_interpolation.o
+	src/core_ocean/mode_init/mpas_ocn_init_iso.o
+	src/core_ocean/mode_init/mpas_ocn_init_isomip.o
+	src/core_ocean/mode_init/mpas_ocn_init_isomip_plus.o
+	src/core_ocean/mode_init/mpas_ocn_init_lock_exchange.o
+	src/core_ocean/mode_init/mpas_ocn_init_mode.o
+	src/core_ocean/mode_init/mpas_ocn_init_overflow.o
+	src/core_ocean/mode_init/mpas_ocn_init_periodic_planar.o
+	src/core_ocean/mode_init/mpas_ocn_init_sea_mount.o
+	src/core_ocean/mode_init/mpas_ocn_init_soma.o
+	src/core_ocean/mode_init/mpas_ocn_init_spherical_utils.o
+	src/core_ocean/mode_init/mpas_ocn_init_ssh_and_landIcePressure.o
+	src/core_ocean/mode_init/mpas_ocn_init_sub_ice_shelf_2D.o
+	src/core_ocean/mode_init/mpas_ocn_init_vertical_grids.o
+	src/core_ocean/mode_init/mpas_ocn_init_ziso.o
+	src/core_ocean/mode_init/ocn_init_baroclinic_channel.mod
+	src/core_ocean/mode_init/ocn_init_cell_markers.mod
+	src/core_ocean/mode_init/ocn_init_cvmix_wswsbf.mod
+	src/core_ocean/mode_init/ocn_init_ecosys_column.mod
+	src/core_ocean/mode_init/ocn_init_global_ocean.mod
+	src/core_ocean/mode_init/ocn_init_internal_waves.mod
+	src/core_ocean/mode_init/ocn_init_interpolation.mod
+	src/core_ocean/mode_init/ocn_init_iso.mod
+	src/core_ocean/mode_init/ocn_init_isomip.mod
+	src/core_ocean/mode_init/ocn_init_isomip_plus.mod
+	src/core_ocean/mode_init/ocn_init_lock_exchange.mod
+	src/core_ocean/mode_init/ocn_init_mode.mod
+	src/core_ocean/mode_init/ocn_init_overflow.mod
+	src/core_ocean/mode_init/ocn_init_periodic_planar.mod
+	src/core_ocean/mode_init/ocn_init_sea_mount.mod
+	src/core_ocean/mode_init/ocn_init_soma.mod
+	src/core_ocean/mode_init/ocn_init_spherical_utils.mod
+	src/core_ocean/mode_init/ocn_init_ssh_and_landicepressure.mod
+	src/core_ocean/mode_init/ocn_init_sub_ice_shelf_2d.mod
+	src/core_ocean/mode_init/ocn_init_vertical_grids.mod
+	src/core_ocean/mode_init/ocn_init_ziso.mod
+	src/core_ocean/shared/mpas_ocn_constants.o
+	src/core_ocean/shared/mpas_ocn_diagnostics.o
+	src/core_ocean/shared/mpas_ocn_diagnostics_routines.o
+	src/core_ocean/shared/mpas_ocn_effective_density_in_land_ice.o
+	src/core_ocean/shared/mpas_ocn_equation_of_state.o
+	src/core_ocean/shared/mpas_ocn_equation_of_state_jm.o
+	src/core_ocean/shared/mpas_ocn_equation_of_state_linear.o
+	src/core_ocean/shared/mpas_ocn_forcing.o
+	src/core_ocean/shared/mpas_ocn_framework_forcing.o
+	src/core_ocean/shared/mpas_ocn_frazil_forcing.o
+	src/core_ocean/shared/mpas_ocn_gm.o
+	src/core_ocean/shared/mpas_ocn_high_freq_thickness_hmix_del2.o
+	src/core_ocean/shared/mpas_ocn_init_routines.o
+	src/core_ocean/shared/mpas_ocn_sea_ice.o
+	src/core_ocean/shared/mpas_ocn_surface_bulk_forcing.o
+	src/core_ocean/shared/mpas_ocn_surface_land_ice_fluxes.o
+	src/core_ocean/shared/mpas_ocn_tendency.o
+	src/core_ocean/shared/mpas_ocn_test.o
+	src/core_ocean/shared/mpas_ocn_thick_ale.o
+	src/core_ocean/shared/mpas_ocn_thick_hadv.o
+	src/core_ocean/shared/mpas_ocn_thick_surface_flux.o
+	src/core_ocean/shared/mpas_ocn_thick_vadv.o
+	src/core_ocean/shared/mpas_ocn_time_average_coupled.o
+	src/core_ocean/shared/mpas_ocn_tracer_DMS.o
+	src/core_ocean/shared/mpas_ocn_tracer_MacroMolecules.o
+	src/core_ocean/shared/mpas_ocn_tracer_TTD.o
+	src/core_ocean/shared/mpas_ocn_tracer_advection.o
+	src/core_ocean/shared/mpas_ocn_tracer_advection_mono.o
+	src/core_ocean/shared/mpas_ocn_tracer_advection_std.o
+	src/core_ocean/shared/mpas_ocn_tracer_ecosys.o
+	src/core_ocean/shared/mpas_ocn_tracer_exponential_decay.o
+	src/core_ocean/shared/mpas_ocn_tracer_hmix.o
+	src/core_ocean/shared/mpas_ocn_tracer_hmix_del2.o
+	src/core_ocean/shared/mpas_ocn_tracer_hmix_del4.o
+	src/core_ocean/shared/mpas_ocn_tracer_hmix_redi.o
+	src/core_ocean/shared/mpas_ocn_tracer_ideal_age.o
+	src/core_ocean/shared/mpas_ocn_tracer_interior_restoring.o
+	src/core_ocean/shared/mpas_ocn_tracer_nonlocalflux.o
+	src/core_ocean/shared/mpas_ocn_tracer_short_wave_absorption.o
+	src/core_ocean/shared/mpas_ocn_tracer_short_wave_absorption_jerlov.o
+	src/core_ocean/shared/mpas_ocn_tracer_short_wave_absorption_variable.o
+	src/core_ocean/shared/mpas_ocn_tracer_surface_flux_to_tend.o
+	src/core_ocean/shared/mpas_ocn_tracer_surface_restoring.o
+	src/core_ocean/shared/mpas_ocn_vel_coriolis.o
+	src/core_ocean/shared/mpas_ocn_vel_forcing.o
+	src/core_ocean/shared/mpas_ocn_vel_forcing_explicit_bottom_drag.o
+	src/core_ocean/shared/mpas_ocn_vel_forcing_rayleigh.o
+	src/core_ocean/shared/mpas_ocn_vel_forcing_surface_stress.o
+	src/core_ocean/shared/mpas_ocn_vel_hmix.o
+	src/core_ocean/shared/mpas_ocn_vel_hmix_del2.o
+	src/core_ocean/shared/mpas_ocn_vel_hmix_del4.o
+	src/core_ocean/shared/mpas_ocn_vel_hmix_leith.o
+	src/core_ocean/shared/mpas_ocn_vel_pressure_grad.o
+	src/core_ocean/shared/mpas_ocn_vel_vadv.o
+	src/core_ocean/shared/mpas_ocn_vmix.o
+	src/core_ocean/shared/mpas_ocn_vmix_coefs_const.o
+	src/core_ocean/shared/mpas_ocn_vmix_coefs_redi.o
+	src/core_ocean/shared/mpas_ocn_vmix_coefs_rich.o
+	src/core_ocean/shared/mpas_ocn_vmix_coefs_tanh.o
+	src/core_ocean/shared/mpas_ocn_vmix_cvmix.o
+	src/core_ocean/shared/ocn_constants.mod
+	src/core_ocean/shared/ocn_diagnostics.mod
+	src/core_ocean/shared/ocn_diagnostics_routines.mod
+	src/core_ocean/shared/ocn_effective_density_in_land_ice.mod
+	src/core_ocean/shared/ocn_equation_of_state.mod
+	src/core_ocean/shared/ocn_equation_of_state_jm.mod
+	src/core_ocean/shared/ocn_equation_of_state_linear.mod
+	src/core_ocean/shared/ocn_forcing.mod
+	src/core_ocean/shared/ocn_framework_forcing.mod
+	src/core_ocean/shared/ocn_frazil_forcing.mod
+	src/core_ocean/shared/ocn_gm.mod
+	src/core_ocean/shared/ocn_high_freq_thickness_hmix_del2.mod
+	src/core_ocean/shared/ocn_init_routines.mod
+	src/core_ocean/shared/ocn_sea_ice.mod
+	src/core_ocean/shared/ocn_surface_bulk_forcing.mod
+	src/core_ocean/shared/ocn_surface_land_ice_fluxes.mod
+	src/core_ocean/shared/ocn_tendency.mod
+	src/core_ocean/shared/ocn_test.mod
+	src/core_ocean/shared/ocn_thick_ale.mod
+	src/core_ocean/shared/ocn_thick_hadv.mod
+	src/core_ocean/shared/ocn_thick_surface_flux.mod
+	src/core_ocean/shared/ocn_thick_vadv.mod
+	src/core_ocean/shared/ocn_time_average_coupled.mod
+	src/core_ocean/shared/ocn_tracer_advection.mod
+	src/core_ocean/shared/ocn_tracer_advection_mono.mod
+	src/core_ocean/shared/ocn_tracer_advection_std.mod
+	src/core_ocean/shared/ocn_tracer_dms.mod
+	src/core_ocean/shared/ocn_tracer_ecosys.mod
+	src/core_ocean/shared/ocn_tracer_exponential_decay.mod
+	src/core_ocean/shared/ocn_tracer_hmix.mod
+	src/core_ocean/shared/ocn_tracer_hmix_del2.mod
+	src/core_ocean/shared/ocn_tracer_hmix_del4.mod
+	src/core_ocean/shared/ocn_tracer_hmix_redi.mod
+	src/core_ocean/shared/ocn_tracer_ideal_age.mod
+	src/core_ocean/shared/ocn_tracer_interior_restoring.mod
+	src/core_ocean/shared/ocn_tracer_macromolecules.mod
+	src/core_ocean/shared/ocn_tracer_nonlocalflux.mod
+	src/core_ocean/shared/ocn_tracer_short_wave_absorption.mod
+	src/core_ocean/shared/ocn_tracer_short_wave_absorption_jerlov.mod
+	src/core_ocean/shared/ocn_tracer_short_wave_absorption_variable.mod
+	src/core_ocean/shared/ocn_tracer_surface_flux_to_tend.mod
+	src/core_ocean/shared/ocn_tracer_surface_restoring.mod
+	src/core_ocean/shared/ocn_tracer_ttd.mod
+	src/core_ocean/shared/ocn_vel_coriolis.mod
+	src/core_ocean/shared/ocn_vel_forcing.mod
+	src/core_ocean/shared/ocn_vel_forcing_explicit_bottom_drag.mod
+	src/core_ocean/shared/ocn_vel_forcing_rayleigh.mod
+	src/core_ocean/shared/ocn_vel_forcing_surface_stress.mod
+	src/core_ocean/shared/ocn_vel_hmix.mod
+	src/core_ocean/shared/ocn_vel_hmix_del2.mod
+	src/core_ocean/shared/ocn_vel_hmix_del4.mod
+	src/core_ocean/shared/ocn_vel_hmix_leith.mod
+	src/core_ocean/shared/ocn_vel_pressure_grad.mod
+	src/core_ocean/shared/ocn_vel_vadv.mod
+	src/core_ocean/shared/ocn_vmix.mod
+	src/core_ocean/shared/ocn_vmix_coefs_const.mod
+	src/core_ocean/shared/ocn_vmix_coefs_redi.mod
+	src/core_ocean/shared/ocn_vmix_coefs_rich.mod
+	src/core_ocean/shared/ocn_vmix_coefs_tanh.mod
+	src/core_ocean/shared/ocn_vmix_cvmix.mod
+	src/core_ocean/st2xI68E
+	src/core_ocean/st3gGnGH
+	src/core_ocean/stR3nyk0
+	src/core_ocean/stT6C0Rg
+	src/core_ocean/stVteLJm
+	src/core_ocean/stgwEZwM
+	src/core_ocean/stmKbCD0
+	src/driver/mpas.o
+	src/driver/mpas_subdriver.mod
+	src/driver/mpas_subdriver.o
+	src/external/esmf_time_f90/ESMF.o
+	src/external/esmf_time_f90/ESMF_AlarmClockMod.o
+	src/external/esmf_time_f90/ESMF_AlarmMod.o
+	src/external/esmf_time_f90/ESMF_BaseMod.o
+	src/external/esmf_time_f90/ESMF_BaseTimeMod.o
+	src/external/esmf_time_f90/ESMF_CalendarMod.o
+	src/external/esmf_time_f90/ESMF_ClockMod.o
+	src/external/esmf_time_f90/ESMF_FractionMod.o
+	src/external/esmf_time_f90/ESMF_ShrTimeMod.o
+	src/external/esmf_time_f90/ESMF_Stubs.o
+	src/external/esmf_time_f90/ESMF_TimeIntervalMod.o
+	src/external/esmf_time_f90/ESMF_TimeMod.o
+	src/external/esmf_time_f90/MeatMod.o
+	src/external/esmf_time_f90/esmf.mod
+	src/external/esmf_time_f90/esmf_alarmclockmod.mod
+	src/external/esmf_time_f90/esmf_alarmmod.mod
+	src/external/esmf_time_f90/esmf_basemod.mod
+	src/external/esmf_time_f90/esmf_basetimemod.mod
+	src/external/esmf_time_f90/esmf_calendarmod.mod
+	src/external/esmf_time_f90/esmf_clockmod.mod
+	src/external/esmf_time_f90/esmf_fractionmod.mod
+	src/external/esmf_time_f90/esmf_shrtimemod.mod
+	src/external/esmf_time_f90/esmf_stubs.mod
+	src/external/esmf_time_f90/esmf_timeintervalmod.mod
+	src/external/esmf_time_f90/esmf_timemod.mod
+	src/external/esmf_time_f90/libesmf_time.a
+	src/external/esmf_time_f90/meatmod.mod
+	src/external/esmf_time_f90/wrf_error_fatal.o
+	src/external/esmf_time_f90/wrf_message.o
+	src/external/ezxml/ezxml.o
+	src/framework/libframework.a
+	src/framework/mpas_abort.mod
+	src/framework/mpas_abort.o
+	src/framework/mpas_attlist.mod
+	src/framework/mpas_attlist.o
+	src/framework/mpas_block_creator.mod
+	src/framework/mpas_block_creator.o
+	src/framework/mpas_block_decomp.mod
+	src/framework/mpas_block_decomp.o
+	src/framework/mpas_bootstrapping.mod
+	src/framework/mpas_bootstrapping.o
+	src/framework/mpas_c_interfacing.mod
+	src/framework/mpas_c_interfacing.o
+	src/framework/mpas_constants.mod
+	src/framework/mpas_constants.o
+	src/framework/mpas_decomp.mod
+	src/framework/mpas_decomp.o
+	src/framework/mpas_derived_types.mod
+	src/framework/mpas_derived_types.o
+	src/framework/mpas_dmpar.mod
+	src/framework/mpas_dmpar.o
+	src/framework/mpas_domain_routines.mod
+	src/framework/mpas_domain_routines.o
+	src/framework/mpas_field_accessor.mod
+	src/framework/mpas_field_accessor.o
+	src/framework/mpas_field_routines.mod
+	src/framework/mpas_field_routines.o
+	src/framework/mpas_forcing.mod
+	src/framework/mpas_forcing.o
+	src/framework/mpas_framework.mod
+	src/framework/mpas_framework.o
+	src/framework/mpas_hash.mod
+	src/framework/mpas_hash.o
+	src/framework/mpas_io.mod
+	src/framework/mpas_io.o
+	src/framework/mpas_io_streams.mod
+	src/framework/mpas_io_streams.o
+	src/framework/mpas_io_units.mod
+	src/framework/mpas_io_units.o
+	src/framework/mpas_kind_types.mod
+	src/framework/mpas_kind_types.o
+	src/framework/mpas_log.mod
+	src/framework/mpas_log.o
+	src/framework/mpas_pool_routines.mod
+	src/framework/mpas_pool_routines.o
+	src/framework/mpas_sort.mod
+	src/framework/mpas_sort.o
+	src/framework/mpas_stream_list.mod
+	src/framework/mpas_stream_list.o
+	src/framework/mpas_stream_manager.mod
+	src/framework/mpas_stream_manager.o
+	src/framework/mpas_threading.mod
+	src/framework/mpas_threading.o
+	src/framework/mpas_timekeeping.mod
+	src/framework/mpas_timekeeping.o
+	src/framework/mpas_timer.mod
+	src/framework/mpas_timer.o
+	src/framework/pool_hash.o
+	src/framework/random_id.o
+	src/framework/regex_matching.o
+	src/framework/xml_stream_parser.o
+	src/libdycore.a
+	src/libframework.a
+	src/libops.a
+	src/operators/libops.a
+	src/operators/mpas_geometry_utils.mod
+	src/operators/mpas_geometry_utils.o
+	src/operators/mpas_matrix_operations.mod
+	src/operators/mpas_matrix_operations.o
+	src/operators/mpas_rbf_interpolation.mod
+	src/operators/mpas_rbf_interpolation.o
+	src/operators/mpas_spline_interpolation.mod
+	src/operators/mpas_spline_interpolation.o
+	src/operators/mpas_tensor_operations.mod
+	src/operators/mpas_tensor_operations.o
+	src/operators/mpas_tracer_advection_helpers.mod
+	src/operators/mpas_tracer_advection_helpers.o
+	src/operators/mpas_tracer_advection_mono.mod
+	src/operators/mpas_tracer_advection_mono.o
+	src/operators/mpas_tracer_advection_std.mod
+	src/operators/mpas_tracer_advection_std.o
+	src/operators/mpas_vector_operations.mod
+	src/operators/mpas_vector_operations.o
+	src/operators/mpas_vector_reconstruction.mod
+	src/operators/mpas_vector_reconstruction.o
+	src/tools/input_gen/namelist_gen
+	src/tools/input_gen/namelist_gen.o
+	src/tools/input_gen/streams_gen
+	src/tools/input_gen/streams_gen.o
+	src/tools/input_gen/test_functions.o
+	src/tools/registry/dictionary.o
+	src/tools/registry/fortprintf.o
+	src/tools/registry/gen_inc.o
+	src/tools/registry/parse
+	src/tools/registry/parse.o
+	src/tools/registry/utility.o
+
+no changes added to commit (use "git add" and/or "git commit -a")

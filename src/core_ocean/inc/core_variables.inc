@@ -1,0 +1,5 @@
+       core % modelName = 'mpas'
+       core % coreName = 'ocean'
+       core % modelVersion = '6.0'
+       core % executableName = 'ocean_model'
+       core % git_version = 'unknown'
