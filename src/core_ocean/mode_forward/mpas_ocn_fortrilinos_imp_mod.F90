@@ -140,7 +140,7 @@ module ocn_fortrilinos_imp_mod
 
     n_global_vec = nvec
 
-      print*, 'PRINT in noxsolve'
+!     print*, 'PRINT in noxsolve'
     
     ! ------------------------------------------------- !
     call mpas_timer_start("si fortrilinos params")

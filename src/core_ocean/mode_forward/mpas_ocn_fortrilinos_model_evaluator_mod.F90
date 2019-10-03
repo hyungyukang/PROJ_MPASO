@@ -113,7 +113,7 @@ module ocn_model_evaluator_mod
     integer(global_ordinal_type),dimension(:),allocatable :: iTmpArray
     ! -------------------------------------------------------------- !
 
-    print*, 'PRINT in new_'
+!   print*, 'PRINT in new_'
    
     self = ForModelEvaluator()
     self%comm = comm
@@ -229,8 +229,6 @@ module ocn_model_evaluator_mod
     character (len=*), parameter :: subcycleGroupName = 'subcycleFields'
     !-----------------------------------------------------------------
 
-    print*, 'PRINT in resid'
-
     call mpas_timer_start("si fortrilinos residu")
 
     call self%update_solution_vector(x)
@@ -330,36 +328,23 @@ module ocn_model_evaluator_mod
             fluxb2 = thicknessSumLag * (0.5_RKIND*gravity*sshDiffCur + (-barotropicCoriolisTerm(iEdge)-barotropicForcing(iEdge)) )
             fluxAx = thicknessSumLag * sshDiffLag
   
-            sshTendb1 = sshTendb1 + edgeSignOnCell(i, iCell) * fluxb1 * dvEdge(iEdge)
-            sshTendb2 = sshTendb2 + edgeSignOnCell(i, iCell) * fluxb2 * dvEdge(iEdge)
-            sshTendAx = sshTendAx + edgeSignOnCell(i, iCell) * fluxAx * dvEdge(iEdge)
+            sshTendb1 = sshTendb1 + edgeSignOnCell(i, iCell) * fluxb1 * dvEdge(iEdge) / areaCell(iCell)
+            sshTendb2 = sshTendb2 + edgeSignOnCell(i, iCell) * fluxb2 * dvEdge(iEdge) / areaCell(iCell)
+            sshTendAx = sshTendAx + edgeSignOnCell(i, iCell) * fluxAx * dvEdge(iEdge) / areaCell(iCell)
 
             !--------------------------------------------------------------!
   
           end do ! i
             
-         
-          !-------------------------------------------------------------------------------! 
           sshTendb1 = (4.0_RKIND/(gravity*self%dt)) * sshTendb1
-          sshTendb2 = (2.0_RKIND/(gravity   )) * sshTendb2
+          sshTendb2 = (2.0_RKIND/(gravity        )) * sshTendb2
+          sshTendAx =                                 sshTendAx
 
-          sshCurArea = (4.0_RKIND/(gravity*self%dt**2.0)) * sshCur(iCell) * areaCell(iCell)
-          sshLagArea = (4.0_RKIND/(gravity*self%dt**2.0)) *  udata(iCell) * areaCell(iCell)
-
+          sshCurArea = (4.0_RKIND/(gravity*self%dt**2.0)) * sshCur(iCell) 
+          sshLagArea = (4.0_RKIND/(gravity*self%dt**2.0)) *  udata(iCell) 
+  
           CGvec_r0(iCell) =-(-sshCurArea - sshTendb1 + sshTendb2)   &
                            +(-sshLagArea - sshTendAx) 
-          !-------------------------------------------------------------------------------! 
-          !-------------------------------------------------------------------------------! 
-          !-------------------------------------------------------------------------------! 
-!         sshTendb1 = (4.0_RKIND/(gravity*self%dt)) * sshTendb1 / areaCell(iCell)
-!         sshTendb2 = (2.0_RKIND/(gravity        )) * sshTendb2 / areaCell(iCell)
-!         sshTendAx =                                 sshTendAx / areaCell(iCell)
-
-!         sshCurArea = (4.0_RKIND/(gravity*self%dt**2.0)) * sshCur(iCell) 
-!         sshLagArea = (4.0_RKIND/(gravity*self%dt**2.0)) *  udata(iCell) 
-! 
-!         CGvec_r0(iCell) =-(-sshCurArea - sshTendb1 + sshTendb2)   &
-!                          +(-sshLagArea - sshTendAx) 
           !-------------------------------------------------------------------------------! 
   
           lclrow = iCell
@@ -380,7 +365,7 @@ module ocn_model_evaluator_mod
 
     nullify(udata)
 
-    print*, 'PRINT in resid end'
+!   print*, 'PRINT in resid end'
 
     call mpas_timer_stop ("si fortrilinos residu")
 
@@ -396,8 +381,6 @@ module ocn_model_evaluator_mod
     integer(size_type) :: num_vecs=1
     !----------------------------------------------------------------
 
-    print*, 'PRINT in update'
-
     if (.not.allocated(solnvec)) then
       allocate(solnvec, source=TpetraMultiVector(self%x_map,num_vecs))
     endif
@@ -412,8 +395,6 @@ module ocn_model_evaluator_mod
     class(ocnModelEvaluator),intent(in) :: self
     type(TpetraMap) :: map
 
-    print*, 'PRINT in xmap'
-
     map = self%x_map
 
   end function ocnModelEvaluator_get_x_map
@@ -423,8 +404,6 @@ module ocn_model_evaluator_mod
   function ocnModelEvaluator_get_f_map(self) result(map)
     class(ocnModelEvaluator),intent(in) :: self
     type(TpetraMap) :: map
-
-    print*, 'PRINT in fmap'
 
     map = self%x_map
 
@@ -440,8 +419,6 @@ module ocn_model_evaluator_mod
     real(scalar_type), dimension(:), pointer :: udata
     integer(size_type), parameter :: ione = 1
    
-    print*, 'PRINT in getFinal'
-
     ! This is for the initial value replacement in 'evaluate_resid'.
     justDoIt = .true.
 
@@ -473,8 +450,6 @@ module ocn_model_evaluator_mod
     integer, dimension(:), pointer :: nCellsArray, nEdgesArray
     real (kind=RKIND), dimension(:), pointer :: CGvec_r1
     ! ----------------------------------------------------
-
-    print*, 'PRINT in ocnHalo'
 
     block => self%domain % blocklist
     do while (associated(block))
@@ -510,8 +485,6 @@ module ocn_model_evaluator_mod
   subroutine delete_ocnModelEvaluator(self)
     class(ocnModelEvaluator),intent(inout) :: self
 
-    print*, 'PRINT in release'
- 
     call self%comm%release()
     call self%x_map%release()
     call self%f_map%release()
