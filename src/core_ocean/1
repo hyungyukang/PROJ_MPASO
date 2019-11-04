@@ -1,5 +1,53 @@
+Registry.xml:		<nml_option name="config_time_integrator" type="character" default_value="split_explicit" units="unitless"
+Registry.xml:					possible_values="'split_explicit', 'RK4', 'unsplit_explicit'"
+Registry.xml:	<nml_record name="split_explicit_ts" mode="forward">
+Registry_processed.xml:		<nml_option name="config_time_integrator" type="character" default_value="split_explicit" units="unitless"
+Registry_processed.xml:					possible_values="'split_explicit', 'RK4', 'unsplit_explicit'"
+Registry_processed.xml:	<nml_record name="split_explicit_ts" mode="forward">
+analysis_members/mpas_ocn_high_frequency_output.F:         if ( config_time_integrator == trim('split_explicit')) then
+analysis_members/mpas_ocn_high_frequency_output.F:         if ( config_time_integrator == trim('split_explicit')) then
+Binary file analysis_members/mpas_ocn_high_frequency_output.o matches
+default_inputs/namelist.ocean:    config_time_integrator = 'split_explicit'
+default_inputs/namelist.ocean:&split_explicit_ts
+default_inputs/namelist.ocean.forward:    config_time_integrator = 'split_explicit'
+default_inputs/namelist.ocean.forward:&split_explicit_ts
+Binary file driver/mpas_ocn_core_interface.o matches
+driver/mpas_ocn_core_interface.F:         if (    config_time_integrator == trim('split_explicit') &
+driver/mpas_ocn_core_interface.F:            .or. config_time_integrator == trim('unsplit_explicit') ) then
+inc/namelist_defines.inc:      character (len=StrKIND) :: config_time_integrator = 'split_explicit'
+inc/namelist_defines.inc:   subroutine ocn_setup_nmlrec_split_explicit_ts(configPool, unitNumber, dminfo)
+inc/namelist_defines.inc:      namelist /split_explicit_ts/ &
+inc/namelist_defines.inc:         read(unitNumber, split_explicit_ts, iostat=ierr)
+inc/namelist_defines.inc:            call mpas_log_write('*** Encountered an issue while attempting to read namelist record split_explicit_ts')
+inc/namelist_defines.inc:         call mpas_log_write('Error while reading namelist record split_explicit_ts.', MPAS_LOG_CRIT)
+inc/namelist_defines.inc:   end subroutine ocn_setup_nmlrec_split_explicit_ts
+inc/namelist_call.inc:      call ocn_setup_nmlrec_split_explicit_ts(configPool, unitNumber, dminfo)
 Binary file libdycore.a matches
-test_backup/mode_forward_back2/mpas_ocn_time_integration_si.F:              print*,'after xstate', xstate(1:4)
-Binary file test_backup/mode_forward_back2/mpas_ocn_time_integration_si.o matches
-test_backup/mode_forward_back/mpas_ocn_time_integration_si.F:              print*,'after xstate', xstate(1:4)
-Binary file test_backup/mode_forward_back/mpas_ocn_time_integration_si.o matches
+mode_forward/mpas_ocn_time_integration_split.F:      integer :: iCell, i,k,j, iEdge, cell1, cell2, split_explicit_step, split, &
+mode_forward/mpas_ocn_time_integration_split.F:      do split_explicit_step = 1, config_n_ts_iter
+mode_forward/mpas_ocn_time_integration_split.F:         stage1_tend_time = min(split_explicit_step,2)
+mode_forward/mpas_ocn_time_integration_split.F:         do j=1,n_bcl_iter(split_explicit_step)
+mode_forward/mpas_ocn_time_integration_split.F:            if (trim(config_time_integrator) == 'unsplit_explicit') then
+mode_forward/mpas_ocn_time_integration_split.F:            elseif (trim(config_time_integrator) == 'split_explicit') then
+mode_forward/mpas_ocn_time_integration_split.F:         if (trim(config_time_integrator) == 'unsplit_explicit') then
+mode_forward/mpas_ocn_time_integration_split.F:         elseif (trim(config_time_integrator) == 'split_explicit') then
+mode_forward/mpas_ocn_time_integration_split.F:         endif ! split_explicit
+mode_forward/mpas_ocn_time_integration_split.F:         if (split_explicit_step < config_n_ts_iter) then
+mode_forward/mpas_ocn_time_integration_split.F:            if (split_explicit_step < config_n_ts_iter) then
+mode_forward/mpas_ocn_time_integration_split.F:            elseif (split_explicit_step == config_n_ts_iter) then
+mode_forward/mpas_ocn_time_integration_split.F:            endif ! split_explicit_step
+mode_forward/mpas_ocn_time_integration_split.F:      end do  ! split_explicit_step = 1, config_n_ts_iter
+mode_forward/mpas_ocn_time_integration_split.F:      if (trim(config_time_integrator) == 'split_explicit') then
+mode_forward/mpas_ocn_time_integration_split.F:            if (trim(config_time_integrator) == 'unsplit_explicit') then
+mode_forward/mpas_ocn_time_integration_split.F:            elseif (trim(config_time_integrator) == 'split_explicit') then
+mode_forward/mpas_ocn_time_integration.F:      elseif (trim(config_time_integrator) == 'split_explicit' &
+mode_forward/mpas_ocn_time_integration.F:          .or.trim(config_time_integrator) == 'unsplit_explicit') then
+mode_forward/mpas_ocn_time_integration.F:             '   choices are: RK4, split_explicit, unsplit_explicit', MPAS_LOG_CRIT)
+Binary file mode_forward/mpas_ocn_time_integration.o matches
+Binary file mode_forward/mpas_ocn_time_integration_split.o matches
+Binary file shared/mpas_ocn_vel_coriolis.o matches
+shared/mpas_ocn_diagnostics.F:      elseif (trim(config_time_integrator) == 'split_explicit' &
+shared/mpas_ocn_diagnostics.F:        .or.trim(config_time_integrator) == 'unsplit_explicit') then
+shared/mpas_ocn_vel_coriolis.F:      elseif ( trim( config_time_integrator ) == 'split_explicit' &
+shared/mpas_ocn_vel_coriolis.F:        .or. trim( config_time_integrator ) == 'unsplit_explicit') then
+Binary file shared/mpas_ocn_diagnostics.o matches

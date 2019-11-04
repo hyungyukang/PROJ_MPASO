@@ -51,4 +51,3 @@ only described below the src directory.
 Model cores are typically developed independently. For information about
 building and running a particular core, please refer to that core's user's
 guide.
-# PROJ_MPASO

@@ -51,7 +51,7 @@ module ocn_fortrilinos_imp_mod
     !--- Only for initial
     if ( init_nox ) then
    
-      print*, 'PRINT in init'
+!     print*, 'PRINT in init'
 
       init_nox = .false.
 
@@ -72,50 +72,6 @@ module ocn_fortrilinos_imp_mod
 
   end subroutine ocn_time_integration_imp_btrmode
 
-!------------------------------------------------------------------------
-
-! subroutine noxinit(comm,domain,dt,params,nvec)
-!   use,intrinsic :: iso_c_binding
-!   implicit none
-!   type(TeuchosComm) :: comm
-!   type(ParameterList) :: params
-!   integer(c_int) :: vector_size,ierr,nvec
-!
-!    !--------------------------------
-!      
-!    type (domain_type) :: domain
-!!   real (kind=RKIND)  :: dt
-!    type (block_type),pointer :: block
-!    integer,pointer :: nCellsPtr,nEdgesPtr
-!    integer,pointer,dimension(:) :: nCellsArray
-!
-!    !--------------------------------
-!    
-!!   comm = TeuchosComm(fcomm)
-!    comm = TeuchosComm()
-!
-!    block => domain % blocklist
-!    do while (associated(block))
-!
-!      call mpas_pool_get_dimension(block % dimensions, 'nCellsArray', nCellsArray)
-!
-!      nCellsNox = nCellsArray(1)
-!
-!      map = TpetraMap(nCellsNox,comm)
-!
-!      params = ParameterList("ocnModelEvaluator")
-!      call load_from_xml(params, 'fortrilinosOptions.xml')
-!
-!      allocate(model_evaluator, source=ocnModelEvaluator(map))
-!      call init_ForModelEvaluator(model_evaluator)
-!      call model_evaluator%setup(params) 
-!      call params%release()
-!
-!      block => block % next
-!    end do
-!
-!  end subroutine noxinit
- 
 !------------------------------------------------------------------------
 
   subroutine noxsolve(comm,domain,dt,params,xstate,nvec,ierr)

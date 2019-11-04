@@ -27,7 +27,6 @@ module ocn_time_integration_rk4
    use mpas_vector_reconstruction
    use mpas_spline_interpolation
    use mpas_timer
-   use mpas_log
 
    use ocn_constants
    use ocn_tendency

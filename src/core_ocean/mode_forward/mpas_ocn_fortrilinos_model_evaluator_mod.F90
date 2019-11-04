@@ -328,23 +328,24 @@ module ocn_model_evaluator_mod
             fluxb2 = thicknessSumLag * (0.5_RKIND*gravity*sshDiffCur + (-barotropicCoriolisTerm(iEdge)-barotropicForcing(iEdge)) )
             fluxAx = thicknessSumLag * sshDiffLag
   
-            sshTendb1 = sshTendb1 + edgeSignOnCell(i, iCell) * fluxb1 * dvEdge(iEdge) / areaCell(iCell)
-            sshTendb2 = sshTendb2 + edgeSignOnCell(i, iCell) * fluxb2 * dvEdge(iEdge) / areaCell(iCell)
-            sshTendAx = sshTendAx + edgeSignOnCell(i, iCell) * fluxAx * dvEdge(iEdge) / areaCell(iCell)
+            sshTendb1 = sshTendb1 + edgeSignOnCell(i, iCell) * fluxb1 * dvEdge(iEdge)
+            sshTendb2 = sshTendb2 + edgeSignOnCell(i, iCell) * fluxb2 * dvEdge(iEdge)
+            sshTendAx = sshTendAx + edgeSignOnCell(i, iCell) * fluxAx * dvEdge(iEdge)
 
             !--------------------------------------------------------------!
   
           end do ! i
-            
+         
+          !-------------------------------------------------------------------------------! 
           sshTendb1 = (4.0_RKIND/(gravity*self%dt)) * sshTendb1
           sshTendb2 = (2.0_RKIND/(gravity        )) * sshTendb2
           sshTendAx =                                 sshTendAx
 
-          sshCurArea = (4.0_RKIND/(gravity*self%dt**2.0)) * sshCur(iCell) 
-          sshLagArea = (4.0_RKIND/(gravity*self%dt**2.0)) *  udata(iCell) 
+          sshCurArea = (4.0_RKIND/(gravity*self%dt**2.0)) * sshCur(iCell) * areaCell(iCell)
+          sshLagArea = (4.0_RKIND/(gravity*self%dt**2.0)) *  udata(iCell) * areaCell(iCell)
   
-          CGvec_r0(iCell) =-(-sshCurArea - sshTendb1 + sshTendb2)   &
-                           +(-sshLagArea - sshTendAx) 
+          CGvec_r0(iCell) =+(-sshCurArea - sshTendb1 + sshTendb2)   &
+                           -(-sshLagArea - sshTendAx) 
           !-------------------------------------------------------------------------------! 
   
           lclrow = iCell

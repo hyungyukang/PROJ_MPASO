@@ -402,15 +402,11 @@ PIO = /global/u2/h/hgkang/my_programs/ParallelIO_1.9.23/build/pio
 NETCDF = /opt/cray/pe/netcdf-hdf5parallel/4.6.1.3/GNU/8.2
 PNETCDF=/opt/cray/pe/parallel-netcdf/1.8.1.4/gnu/8.2
 
-FORTRILINOS_INSTALL = /global/u2/h/hgkang/my_programs/Trilinos_MPI/build/Trilinos_install
-FORTRILINOS_ROOT    = /global/u2/h/hgkang/my_programs/Trilinos_MPI
-FORTRILINOS_BUILD   = /global/u2/h/hgkang/my_programs/Trilinos_MPI/build
+FORTRILINOS_ROOT    = /global/u2/h/hgkang/my_programs/Trilinos_MPI_Release
+FORTRILINOS_BUILD   = $(FORTRILINOS_ROOT)/build
+FORTRILINOS_INSTALL = $(FORTRILINOS_ROOT)/build/Trilinos_install
 
 FORTRILINOS_INCLUDES = -I$(FORTRILINOS_INSTALL)/include -I/$(FORTRILINOS_INSTALL)/lib  -I/$(FORTRILINOS_BUILD)/ForTrilinos/src/utils/src -I/$(FORTRILINOS_ROOT)/build/ForTrilinos/src/interface -I$(FORTRILINOS_BUILD)/packages/nox/src
-
-#FORTRILINOS_INCLUDES = -I$(FORTRILINOS_INSTALL)/include -I/$(FORTRILINOS_INSTALL)/lib -I/$(FORTRILINOS_ROOT)/ForTrilinos/src/utils/src/swig -I/$(FORTRILINOS_ROOT)/build/ForTrilinos/src/utils/src
-
-
 
 CPPINCLUDES = 
 FCINCLUDES = 
@@ -470,7 +466,12 @@ RM = rm -f
 CPP = cpp -P -traditional
 RANLIB = ranlib
 
-LIBS += -L$(FORTRILINOS_INSTALL)/lib
+
+ifeq "$(FORTRILINOS)" "true"
+	LIBS += -Wl,-rpath,$(FORTRILINOS_BUILD)/ForTrilinos/src/interface/src:$(FORTRILINOS_BUILD)/packages/ifpack2:$(FORTRILINOS_BUILD)/ForTrilinos/src/tpetra/src:$(FORTRILINOS_BUILD)/ForTrilinos/src/teuchos/src:$(FORTRILINOS_BUILD)/ForTrilinos/src/utils/src:$(FORTRILINOS_BUILD)/packages/nox/src:$(FORTRILINOS_INSTALL)/lib
+	LIBS += -dynamic -L$(FORTRILINOS_INSTALL)/lib
+	LIBS += -lfortrilinos -lforteuchos -lfortpetra -lnox -lforerror -lforutils -lstratimikos -lstratimikosbelos
+endif
 
 ifdef CORE
 

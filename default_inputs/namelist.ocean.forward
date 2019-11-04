@@ -251,6 +251,12 @@
     config_btr_gam3_velWt2 = 1.0
     config_btr_solve_SSH2 = .false.
 /
+&semi_implicit_ts
+    config_btr_si_preconditioner = 'block_jacobi'
+    config_btr_si_tolerance = 1.0e-10
+    config_n_btr_si_outer_iter = 5
+    config_n_btr_si_u_iter = 5
+/
 &testing
     config_conduct_tests = .false.
     config_test_tensors = .false.
