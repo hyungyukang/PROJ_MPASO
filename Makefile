@@ -396,6 +396,8 @@ bluegene:
 	"OPENMP = $(OPENMP)" \
 	"CPPFLAGS = $(MODEL_FORMULATION) -D_MPI" )
 
+PIO = /global/u2/h/hgkang/my_programs/ParallelIO_1.9.23/build/pio
+
 CPPINCLUDES = 
 FCINCLUDES = 
 LIBS = 

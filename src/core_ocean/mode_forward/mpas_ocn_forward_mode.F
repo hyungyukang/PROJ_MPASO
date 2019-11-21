@@ -603,6 +603,16 @@ module ocn_forward_mode
            block_ptr => block_ptr % next
          end do
 
+
+         
+!        call mpas_timer_start("preconditioning matrix build")
+!        !--- Preconditioner for SI ----------------------------!
+!        call mpas_log_write('Building preconditioning matrix')
+!        call ocn_time_integrator_si_preconditioner(domain, dt)
+!        !------------------------------------------------------!
+!        call mpas_timer_stop("preconditioning matrix build")
+
+
          call mpas_timer_start("time integration")
 
 #ifdef MPAS_DEBUG

@@ -1,0 +1,22 @@
+mpas_ocn_diagnostics.F:      integer, pointer  :: nVertLevels, vertexDegree
+mpas_ocn_diagnostics.F:      call mpas_pool_get_dimension(meshPool, 'vertexDegree', vertexDegree)
+mpas_ocn_diagnostics.F:           do i = 1, vertexDegree
+mpas_ocn_diagnostics.F:            do i = 1, vertexDegree
+Binary file mpas_ocn_diagnostics.o matches
+mpas_ocn_diagnostics_routines.F:      integer, pointer :: nEdges, nVertices, vertexDegree
+mpas_ocn_diagnostics_routines.F:      call mpas_pool_get_dimension(meshPool, 'vertexDegree', vertexDegree)
+mpas_ocn_diagnostics_routines.F:         do i = 1, vertexDegree
+Binary file mpas_ocn_diagnostics_routines.o matches
+mpas_ocn_init_routines.F:   integer, pointer :: nCells, nEdges, nVertices, nVertLevels, vertexDegree
+mpas_ocn_init_routines.F:      call mpas_pool_get_dimension(meshPool, 'vertexDegree', vertexDegree)
+mpas_ocn_init_routines.F:         do i = 2, vertexDegree
+mpas_ocn_init_routines.F:         do i = 2, vertexDegree
+mpas_ocn_init_routines.F:       integer, pointer :: nCells, nEdges, nVertices, vertexDegree
+mpas_ocn_init_routines.F:       call mpas_pool_get_dimension(meshPool, 'vertexDegree', vertexDegree)
+mpas_ocn_init_routines.F:           do j = 1, vertexDegree
+mpas_ocn_init_routines.F:         do i = 1, vertexDegree
+Binary file mpas_ocn_init_routines.o matches
+mpas_ocn_vel_hmix_del4.F:      integer, pointer :: nVertLevels, vertexDegree
+mpas_ocn_vel_hmix_del4.F:      call mpas_pool_get_dimension(meshPool, 'vertexDegree', vertexDegree)
+mpas_ocn_vel_hmix_del4.F:         do i = 1, vertexDegree
+Binary file mpas_ocn_vel_hmix_del4.o matches
